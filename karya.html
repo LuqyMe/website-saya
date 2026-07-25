@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Karya | Khuluq - Portfolio</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Glassmorphism Styles -->
+    <style>
+        html { scroll-behavior: smooth; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050508; }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 9999px;
+            border: 2px solid #050508;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.5); }
+
+        .accent-color { color: #FFFFFF; text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
+
+        /* ===== ULTRA-VIBRANT iOS FROSTED GLASSMORPHISM THEME SYSTEM ===== */
+        header {
+            background: rgba(255, 255, 255, 0.04) !important;
+            backdrop-filter: blur(20px) saturate(190%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(190%) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .glass-panel {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+            backdrop-filter: blur(28px) saturate(200%) !important;
+            -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+            border: 1px solid rgba(255, 255, 255, 0.18) !important;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.35) !important;
+            border-radius: 1.5rem;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            isolation: isolate;
+        }
+
+        .glass-panel:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%) !important;
+            border: 1px solid rgba(255, 255, 255, 0.4) !important;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), inset 0 1px 1px rgba(255, 255, 255, 0.5) !important;
+            transform: translateY(-4px);
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0.35rem 0.75rem;
+            transition: all 0.3s ease;
+            color: rgba(255, 255, 255, 0.75);
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #FFFFFF !important;
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+        }
+
+        .btn-glass {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            color: #FFFFFF;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+        }
+        .btn-glass:hover {
+            border-color: rgba(255, 255, 255, 0.5);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .portfolio-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            padding: 1rem;
+        }
+        .portfolio-image-container {
+            overflow: hidden;
+            border-radius: 0.75rem;
+            position: relative;
+        }
+        .portfolio-image { transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1); }
+        .portfolio-card:hover .portfolio-image { transform: scale(1.06); }
+
+        /* Modal Frosted Glass Overlay */
+        .gemini-modal-overlay {
+            background-color: rgba(0, 0, 0, 0.82);
+            backdrop-filter: blur(28px) saturate(190%);
+            -webkit-backdrop-filter: blur(28px) saturate(190%);
+        }
+
+        /* ===== ULTRA-FLUID ANIMATED AURORA BOREALIS ENGINE ===== */
+        #aurora-background {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+            background-color: #050508;
+        }
+
+        .aurora-curtain {
+            position: absolute;
+            filter: blur(75px) saturate(240%);
+            opacity: 0.6;
+            will-change: transform, opacity;
+        }
+
+        /* Stream 1: Mint Green & Electric Cyan Ribbon */
+        .aurora-1 {
+            top: -25%;
+            left: -25%;
+            width: 150vw;
+            height: 75vh;
+            background: radial-gradient(ellipse at 30% 20%, 
+                rgba(0, 255, 170, 0.35) 0%, 
+                rgba(0, 210, 255, 0.28) 35%, 
+                rgba(120, 0, 255, 0.18) 70%, 
+                transparent 100%
+            );
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            animation: auroraFlow1 22s ease-in-out infinite alternate;
+        }
+
+        /* Stream 2: Deep Violet, Neon Magenta & Fuchsia Ribbon */
+        .aurora-2 {
+            bottom: -25%;
+            right: -25%;
+            width: 140vw;
+            height: 85vh;
+            background: radial-gradient(ellipse at 70% 80%, 
+                rgba(255, 30, 210, 0.3) 0%, 
+                rgba(130, 0, 255, 0.28) 40%, 
+                rgba(0, 220, 255, 0.2) 75%, 
+                transparent 100%
+            );
+            border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+            animation: auroraFlow2 26s ease-in-out infinite alternate;
+        }
+
+        /* Stream 3: Cosmic Indigo & Electric Teal Central Wave */
+        .aurora-3 {
+            top: 20%;
+            left: 10%;
+            width: 110vw;
+            height: 60vh;
+            background: linear-gradient(130deg, 
+                rgba(0, 240, 255, 0.25) 0%, 
+                rgba(180, 50, 255, 0.2) 50%, 
+                rgba(0, 255, 180, 0.15) 100%
+            );
+            border-radius: 50% 50% 60% 40% / 40% 60% 50% 50%;
+            animation: auroraPulse3 18s ease-in-out infinite alternate;
+        }
+
+        /* Stream 4: Soft Emerald Ambient Rays */
+        .aurora-4 {
+            top: 40%;
+            right: 5%;
+            width: 80vw;
+            height: 50vh;
+            background: radial-gradient(ellipse at center, 
+                rgba(0, 255, 200, 0.22) 0%, 
+                rgba(150, 0, 255, 0.12) 60%, 
+                transparent 80%
+            );
+            animation: auroraFlow4 24s ease-in-out infinite alternate;
+        }
+
+        @keyframes auroraFlow1 {
+            0% {
+                transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+                border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            }
+            50% {
+                transform: translateY(70px) translateX(90px) rotate(8deg) scale(1.12);
+                border-radius: 60% 40% 40% 60% / 50% 30% 70% 50%;
+            }
+            100% {
+                transform: translateY(-50px) translateX(-60px) rotate(-6deg) scale(0.92);
+                border-radius: 50% 50% 60% 40% / 60% 40% 50% 50%;
+            }
+        }
+
+        @keyframes auroraFlow2 {
+            0% {
+                transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+                border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+            }
+            50% {
+                transform: translateY(-80px) translateX(-100px) rotate(-10deg) scale(1.15);
+                border-radius: 40% 60% 50% 50% / 60% 40% 60% 40%;
+            }
+            100% {
+                transform: translateY(60px) translateX(70px) rotate(5deg) scale(0.95);
+                border-radius: 55% 45% 40% 60% / 45% 55% 50% 50%;
+            }
+        }
+
+        @keyframes auroraPulse3 {
+            0% { transform: scale(0.88) translateY(0px) rotate(0deg); opacity: 0.45; }
+            50% { transform: scale(1.18) translateY(-40px) rotate(4deg); opacity: 0.75; }
+            100% { transform: scale(0.92) translateY(30px) rotate(-3deg); opacity: 0.5; }
+        }
+
+        @keyframes auroraFlow4 {
+            0% { transform: scale(1) translateX(0px); opacity: 0.35; }
+            50% { transform: scale(1.2) translateX(-50px); opacity: 0.6; }
+            100% { transform: scale(0.9) translateX(40px); opacity: 0.3; }
+        }
+
+        /* ===== STICKY FIXED GLASS HEADER WITH GLOW NAV LINKS ===== */
+        #header {
+            background: transparent;
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            border-bottom: 1px solid transparent;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #header.scrolled {
+            background: rgba(10, 12, 22, 0.85);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+
+        .nav-link-glow {
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .nav-link-glow:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #00f0ff !important;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+            transform: translateY(-2px);
+        }
+        .nav-link-glow:active {
+            transform: translateY(0px) scale(0.96);
+        }
+
+        .nav-link-glow.nav-active {
+            border-color: rgba(0, 240, 255, 0.4) !important;
+            background: rgba(0, 240, 255, 0.12) !important;
+            color: #00f0ff !important;
+            font-weight: 600;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.25) !important;
+        }
+
+        /* ===== STUNNING FUTURISTIC SCROLL REVEAL ===== */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(45px) scale(0.96);
+            filter: blur(6px);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform, filter;
+        }
+
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+        }
+
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+
+        /* ===== INITIAL PAGE ENTRANCE ANIMATION ON LOAD ===== */
+        .initial-reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            filter: blur(10px);
+            transition: opacity 1.0s cubic-bezier(0.16, 1, 0.3, 1), transform 1.0s cubic-bezier(0.16, 1, 0.3, 1), filter 1.0s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform, filter;
+        }
+
+        .initial-reveal.entered {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+        }
+
+        /* ===== ULTRA-FUTURISTIC PRELOADER SCREEN ===== */
+        #preloader {
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s ease;
+        }
+
+        #preloader.loaded {
+            opacity: 0;
+            transform: scale(1.06);
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .preloader-bar-glow {
+            position: relative;
+            background: linear-gradient(90deg, #00f0ff 0%, #38bdf8 40%, #a855f7 70%, #ec4899 100%);
+            background-size: 200% 100%;
+            animation: preloaderGradient 2s ease infinite;
+            transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+        }
+
+        @keyframes preloaderGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .fade-up {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ULTRA-FUTURISTIC PRELOADER ANIMATION (NO CIRCLE SPINNER) -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-[#07080e] flex flex-col items-center justify-center">
+        <!-- Animated Progress Bar with Gradient Wave Shimmer -->
+        <div class="w-64 sm:w-80 h-2 bg-white/10 rounded-full overflow-hidden mb-5 border border-white/15 p-0.5 shadow-inner">
+            <div id="preloader-bar" class="h-full preloader-bar-glow rounded-full w-0"></div>
+        </div>
+
+        <div class="flex items-center justify-between w-64 sm:w-80 text-xs font-mono text-gray-400 tracking-wider">
+            <span id="preloader-status" class="text-cyan-400 font-semibold">INITIALIZING SYSTEM...</span>
+            <span id="preloader-percent" class="text-white font-bold">0%</span>
+        </div>
+    </div>
+
+    <!-- AMBIENT ULTRA-FLUID AURORA BOREALIS BACKGROUND -->
+    <div id="aurora-background">
+        <div class="aurora-curtain aurora-1"></div>
+        <div class="aurora-curtain aurora-2"></div>
+        <div class="aurora-curtain aurora-3"></div>
+        <div class="aurora-curtain aurora-4"></div>
+    </div>
+
+    <!-- STICKY FIXED GLASS NAVBAR (FOLLOWS SCROLL WITH GLOW NAV LINKS) -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 py-5 sm:py-6 px-6 sm:px-12 transition-all duration-300 initial-reveal">
+        <div class="container mx-auto max-w-6xl flex justify-between items-center">
+            <!-- Logo Badge -->
+            <a href="index.html" class="flex items-center gap-2.5 font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tighter hover:opacity-80 transition-opacity">
+                <span>Kq</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 inline-block shadow-[0_0_12px_#00f0ff] animate-pulse"></span>
+            </a>
+            
+            <!-- Glow Nav Links -->
+            <div class="flex items-center space-x-2 sm:space-x-3 text-white/90 text-xs sm:text-sm font-mono tracking-wide">
+                <a href="index.html#about" class="px-4 py-2 rounded-full nav-link-glow border border-transparent">Tentang</a>
+                <a href="karya.html" class="px-4 py-2 rounded-full nav-link-glow nav-active">Karya</a>
+                <a href="index.html#contact" class="px-4 py-2 rounded-full nav-link-glow border border-transparent">Kontak</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-28 pb-20 md:pb-32 min-h-screen">
+        <!-- ===== PORTFOLIO GALLERY SECTION ===== -->
+        <section id="portfolio-gallery">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 initial-reveal delay-100">
+                    <h1 class="font-serif text-5xl md:text-7xl text-white drop-shadow-2xl mb-4">Galeri Karya</h1>
+                    <p class="text-gray-400 text-lg max-w-2xl mx-auto">Eksplorasi visual dan proyek-proyek terbaru yang telah saya kerjakan.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                    
+                    <!-- Proyek 1 -->
+                    <div id="proyek1" class="portfolio-card glass-panel group fade-up cursor-pointer project-trigger"
+                         data-title="AR Soccer Strategy: Real-Time Virtual Set Studio"
+                         data-year="2026"
+                         data-img="images/Proyek1/WhatsApp Image 2026-07-23 at 13.45.59.jpeg"
+                         data-imgs="images/Proyek1/WhatsApp Image 2026-07-23 at 13.45.59.jpeg,images/Proyek1/WhatsApp Image 2026-07-23 at 13.48.28.jpeg,images/Proyek1/WhatsApp Image 2026-07-23 at 13.44.26.jpeg"
+                         data-desc="Proyek ini menghadirkan ekosistem Virtual Set Studio berbasis Augmented Reality (AR) untuk siaran analisis taktik sepak bola. Sistem mengotomatisasi pemrosesan data formasi secara real-time dari API Livescore (JSON) menjadi objek visual 3D interaktif di atas marker fisik. Dilengkapi aplikasi remote Android nirkabel berbasis Netcode for GameObjects (NGO) & Unity Relay, presenter dapat mengendalikan pergerakan posisi pemain secara responsif melalui fitur drag & drop."
+                         data-category="AR & Virtual Set Studio, Real-Time Interactive"
+                         data-tools="Unity Engine, C#, Vuforia SDK, Netcode for GameObjects, Unity Relay, API Livescore (JSON), OBS Studio, Android SDK">
+                        <div class="portfolio-image-container">
+                            <img src="images/Proyek1/WhatsApp Image 2026-07-23 at 13.45.59.jpeg" alt="AR Soccer Strategy: Real-Time Virtual Set Studio" class="portfolio-image w-full h-56 object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <div class="portfolio-text-content mt-6 px-2 pb-2">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-serif text-2xl text-white">AR Soccer Strategy</h3>
+                                <span class="text-white/70 text-xs font-mono border border-white/20 px-2 py-1 rounded-full">2026</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">
+                                Virtual Set Studio berbasis Augmented Reality (AR) untuk siaran analisis taktik sepak bola.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Proyek 2 -->
+                    <div id="proyek2" class="portfolio-card glass-panel group fade-up cursor-pointer project-trigger"
+                         data-title="Environment Artist : Playland Hidden Gems"
+                         data-year="2024 • Durasi: 3 Bulan"
+                         data-img="images/Proyek2/Fullmap..gif"
+                         data-imgs="images/Proyek2/Fullmap..gif,images/Proyek2/Path.gif,images/Proyek2/Building.png"
+                         data-desc="Membuat deisign dan map pada proyek game Playland Hidden Gems di lokasi makassar. Durasi pengerjaan: 3 Bulan."
+                         data-category="Environment pixel artist, animasi pixel, design map, dan objek pixel"
+                         data-tools="Aseprite, Photoshop">
+                        <div class="portfolio-image-container">
+                            <img src="images/Proyek2/Building.png" data-static="images/Proyek2/Building.png" data-anim="images/Proyek2/Fullmap..gif" alt="Environment Artist : Playland Hidden Gems" class="portfolio-image hover-anim-img w-full h-56 object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <div class="portfolio-text-content mt-6 px-2 pb-2">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-serif text-2xl text-white">Environment Artist : Playland Hidden Gems</h3>
+                                <span class="text-white/70 text-xs font-mono border border-white/20 px-2 py-1 rounded-full">2024</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">
+                                Membuat deisign dan map pada proyek game Playland Hidden Gems di lokasi makassar.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Proyek 3 -->
+                    <div id="proyek3" class="portfolio-card glass-panel group fade-up cursor-pointer project-trigger"
+                         data-title="UI/UX : Magic Spell"
+                         data-year="2024 • Durasi: 1 Bulan"
+                         data-img="images/Proyek3/UI Tutorial.gif"
+                         data-imgs="images/Proyek3/UI Tutorial.gif,images/Proyek3/UI Logo.png,images/Proyek3/UI_Credit.png"
+                         data-desc="Membuat UI/UX dan Logo pada game Magic Speel. Durasi pengerjaan: 1 Bulan."
+                         data-category="UI/UX designer"
+                         data-tools="Aseprite, Photoshop">
+                        <div class="portfolio-image-container">
+                            <img src="images/Proyek3/UI Logo.png" data-static="images/Proyek3/UI Logo.png" data-anim="images/Proyek3/UI Tutorial.gif" alt="UI/UX : Magic Spell" class="portfolio-image hover-anim-img w-full h-56 object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <div class="portfolio-text-content mt-6 px-2 pb-2">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-serif text-2xl text-white">UI/UX : Magic Spell</h3>
+                                <span class="text-white/70 text-xs font-mono border border-white/20 px-2 py-1 rounded-full">2024</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">
+                                Membuat UI/UX dan Logo pada game Magic Speel.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Proyek 4 -->
+                    <div id="proyek4" class="portfolio-card glass-panel group fade-up cursor-pointer project-trigger"
+                         data-title="Environment Artist : Road Of Spices"
+                         data-year="2023 • Durasi: 4 Bulan"
+                         data-img="images/Proyek4/Desain tanpa judul (9).png"
+                         data-imgs="images/Proyek4/Desain tanpa judul (9).png,images/Proyek4/Desain tanpa judul (8).png,images/Proyek4/Desain tanpa judul (10).png"
+                         data-desc="Riset implementasi pembuatan environment untuk pembuatan proyek game Road Of Spices. Durasi pengerjaan: 4 Bulan."
+                         data-category="Environment Pixel Artist"
+                         data-tools="Aseprite, Photoshop">
+                        <div class="portfolio-image-container">
+                            <img src="images/Proyek4/Desain tanpa judul (9).png" alt="Environment Artist : Road Of Spices" class="portfolio-image w-full h-56 object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <div class="portfolio-text-content mt-6 px-2 pb-2">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-serif text-2xl text-white">Environment Artist : Road Of Spices</h3>
+                                <span class="text-white/70 text-xs font-mono border border-white/20 px-2 py-1 rounded-full">2023</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">
+                                Riset implementasi pembuatan environment untuk pembuatan proyek game Road Of Spices.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Proyek 5 -->
+                    <div id="proyek5" class="portfolio-card glass-panel group fade-up cursor-pointer project-trigger"
+                         data-title="Environment Bothwill: Flip the Night"
+                         data-year="2022 • Durasi: 2 Bulan"
+                         data-img="images/Proyek5/Porto.png"
+                         data-imgs="images/Proyek5/Porto.png,images/Proyek5/Porto (1).png,images/Proyek5/Porto (2).png"
+                         data-desc="Riset dan implementasi pembuatan environment untuk pembuatan proyek game Bothwill: Flip the Night. Durasi pengerjaan: 2 Bulan."
+                         data-category="Environment Pixel Artist"
+                         data-tools="Aseprite, Photoshop">
+                        <div class="portfolio-image-container">
+                            <img src="images/Proyek5/Porto.png" alt="Environment Bothwill: Flip the Night" class="portfolio-image w-full h-56 object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <div class="portfolio-text-content mt-6 px-2 pb-2">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-serif text-2xl text-white">Environment Bothwill: Flip the Night</h3>
+                                <span class="text-white/70 text-xs font-mono border border-white/20 px-2 py-1 rounded-full">2022</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">
+                                Riset dan implementasi pembuatan environment untuk pembuatan proyek game Bothwill: Flip the Night.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Proyek 6 -->
+                    <div id="proyek6" class="portfolio-card glass-panel group fade-up cursor-pointer project-trigger"
+                         data-title="UI/UX Main Menu dan Assets Game “Trash City”"
+                         data-year="2022 • Durasi: 3 Bulan"
+                         data-img="images/Proyek6/Porto.png"
+                         data-imgs="images/Proyek6/Porto.png,images/Proyek6/Porto (1).png,images/Proyek6/Porto (2).png"
+                         data-desc="Riset dan implementasi pembuatan UI/UX dan assets pada proyek game Trash City. Durasi pengerjaan: 3 Bulan."
+                         data-category="Environment Pixel Artist"
+                         data-tools="Photoshop">
+                        <div class="portfolio-image-container">
+                            <img src="images/Proyek6/Porto.png" alt="UI/UX Main Menu dan Assets Game “Trash City”" class="portfolio-image w-full h-56 object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <div class="portfolio-text-content mt-6 px-2 pb-2">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-serif text-2xl text-white">UI/UX Main Menu & Assets Game “Trash City”</h3>
+                                <span class="text-white/70 text-xs font-mono border border-white/20 px-2 py-1 rounded-full">2022</span>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed">
+                                Riset dan implementasi pembuatan UI/UX dan assets pada proyek game Trash City.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- DIRECT NOTION LINK BANNER: "Other things i do" -->
+                <div class="mt-16 reveal-on-scroll delay-100">
+                    <a href="https://app.notion.com/p/Other-Things-I-Do-a5994d66da9c4033bb4705bb2bc45513" target="_blank" rel="noopener noreferrer" class="glass-panel p-8 sm:p-10 rounded-3xl border border-white/15 bg-gradient-to-r from-cyan-950/30 via-purple-950/20 to-black/40 hover:border-cyan-400/50 transition-all duration-500 group flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-cyan-400/10 rounded-full filter blur-3xl group-hover:bg-cyan-400/20 transition-all"></div>
+                        
+                        <div class="flex items-center gap-5 z-10">
+                            <div class="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-3xl group-hover:scale-110 group-hover:bg-white/20 group-hover:border-cyan-400/40 transition-all shadow-lg shrink-0">
+                                <i class="fas fa-bookmark text-cyan-400"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-mono text-cyan-300 uppercase tracking-widest block mb-1">Notion Workspace</span>
+                                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-cyan-300 transition-colors">Other things i do</h3>
+                                <p class="text-sm text-gray-300 font-light mt-1">Eksplorasi proyek sampingan, catatan riset, dokumentasi studi, dan eksperimen kreatif lainnya di Notion.</p>
+                            </div>
+                        </div>
+
+                        <div class="z-10 shrink-0">
+                            <span class="px-6 py-3 rounded-full font-mono text-xs sm:text-sm tracking-wider uppercase inline-flex items-center gap-2.5 border border-cyan-400/40 bg-cyan-400/10 text-cyan-300 font-semibold group-hover:bg-cyan-400 group-hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(0,240,255,0.2)]">
+                                <span>Kunjungi Notion</span>
+                                <i class="fas fa-external-link-alt text-xs"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="py-8 border-t border-white/5 bg-black/20 backdrop-blur-md relative z-10 text-center text-gray-500 text-xs">
+        <p>&copy; Khuluq, Crafted with Antigraviti.</p>
+    </footer>
+
+    <!-- ✨ PROJECT DETAIL MODAL WITH 3-IMAGE CAROUSEL & AUTO-SLIDE ✨ -->
+    <div id="project-detail-modal" class="hidden fixed inset-0 z-[60] flex items-center justify-center p-4 gemini-modal-overlay">
+        <div class="glass-panel w-full max-w-4xl max-h-[92vh] flex flex-col relative overflow-hidden">
+            <button id="close-detail-modal-btn" class="absolute top-4 right-4 z-50 w-10 h-10 bg-black/60 hover:bg-black/90 border border-white/20 rounded-full text-white flex items-center justify-center backdrop-blur-md shadow-lg transition-all">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="flex-grow overflow-y-auto relative z-10 no-scrollbar">
+                <!-- Carousel Container -->
+                <div id="modal-slider-container" class="w-full h-72 sm:h-[400px] md:h-[450px] relative overflow-hidden group/slider bg-black/40">
+                    <div id="modal-slides-track" class="w-full h-full flex transition-transform duration-500 ease-out"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none z-10"></div>
+                    
+                    <!-- Prev / Next Navigation Buttons -->
+                    <button id="slider-prev-btn" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-black/60 hover:bg-black/90 border border-white/20 rounded-full text-white flex items-center justify-center backdrop-blur-md shadow-lg transition-all">
+                        <i class="fas fa-chevron-left text-sm"></i>
+                    </button>
+                    <button id="slider-next-btn" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-black/60 hover:bg-black/90 border border-white/20 rounded-full text-white flex items-center justify-center backdrop-blur-md shadow-lg transition-all">
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </button>
+                    
+                    <!-- Indicator Dots -->
+                    <div id="slider-dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-2"></div>
+                    
+                    <!-- Counter Badge -->
+                    <div id="slider-counter" class="absolute top-4 left-4 z-20 text-xs text-white/80 font-mono bg-black/50 border border-white/15 backdrop-blur-md px-3 py-1 rounded-full">
+                        1 / 1
+                    </div>
+                </div>
+
+                <!-- Text Details Area -->
+                <div class="p-6 sm:p-8 bg-[#07070a]/95 backdrop-blur-xl border-t border-white/10 relative z-10">
+                    <div class="flex justify-between items-start mb-4">
+                        <h2 id="detail-modal-title" class="font-serif text-2xl sm:text-3xl text-white font-bold"></h2>
+                        <span id="detail-modal-year" class="font-mono text-xs text-white/80 border border-white/20 bg-white/5 px-3 py-1 rounded-full shrink-0"></span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <h4 class="text-xs font-mono text-white/50 uppercase mb-2">Kategori Proyek</h4>
+                            <div id="detail-modal-categories" class="flex flex-wrap gap-2"></div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-mono text-white/50 uppercase mb-2">Tools & Software</h4>
+                            <div id="detail-modal-tools" class="flex flex-wrap gap-2"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-mono text-white/50 uppercase mb-2">Deskripsi Proyek</h4>
+                        <p id="detail-modal-desc" class="text-gray-300 text-sm sm:text-base leading-relaxed font-light"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UI INTERACTION SCRIPTS -->
+    <script>
+        // ===== ULTRA-FUTURISTIC PRELOADER ENGINE (SMOOTH PACED ANIMATION) =====
+        const preloader = document.getElementById('preloader');
+        const preloaderBar = document.getElementById('preloader-bar');
+        const preloaderPercent = document.getElementById('preloader-percent');
+        const preloaderStatus = document.getElementById('preloader-status');
+
+        let progress = 0;
+        const statusTexts = ['INITIALIZING SYSTEM...', 'LOADING ASSETS...', 'PREPARING VISUALS...', 'WELCOME'];
+
+        const progressInterval = setInterval(() => {
+            // Smooth pacing step ~2.5s total duration
+            progress += Math.floor(Math.random() * 5) + 2;
+            if (progress > 100) progress = 100;
+
+            if (preloaderBar) preloaderBar.style.width = `${progress}%`;
+            if (preloaderPercent) preloaderPercent.textContent = `${progress}%`;
+            
+            if (progress < 30) {
+                if (preloaderStatus) preloaderStatus.textContent = statusTexts[0];
+            } else if (progress < 65) {
+                if (preloaderStatus) preloaderStatus.textContent = statusTexts[1];
+            } else if (progress < 92) {
+                if (preloaderStatus) preloaderStatus.textContent = statusTexts[2];
+            } else {
+                if (preloaderStatus) preloaderStatus.textContent = statusTexts[3];
+            }
+
+            if (progress >= 100) {
+                clearInterval(progressInterval);
+                setTimeout(() => {
+                    if (preloader) preloader.classList.add('loaded');
+                    // Trigger Initial Page Content Entrance Animation
+                    document.querySelectorAll('.initial-reveal').forEach(el => {
+                        el.classList.add('entered');
+                    });
+                }, 300);
+            }
+        }, 55);
+
+        // ===== STICKY HEADER SCROLL ENGINE =====
+        const headerEl = document.getElementById('header');
+        function handleHeaderScroll() {
+            if (!headerEl) return;
+            if (window.scrollY > 30) {
+                headerEl.classList.add('scrolled');
+            } else {
+                headerEl.classList.remove('scrolled');
+            }
+        }
+        window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+        handleHeaderScroll();
+
+        // ===== FUTURISTIC SCROLL REVEAL INTERSECTION OBSERVER =====
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // 3-IMAGE CAROUSEL & AUTO-SLIDE MODAL LOGIC
+        let currentSlide = 0;
+        let slideImages = [];
+        let autoSlideInterval = null;
+
+        function updateSlider() {
+            const track = document.getElementById('modal-slides-track');
+            if (!track) return;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            const counter = document.getElementById('slider-counter');
+            if (counter) counter.textContent = `${currentSlide + 1} / ${slideImages.length}`;
+
+            document.querySelectorAll('.slider-dot').forEach((dot, idx) => {
+                if (idx === currentSlide) {
+                    dot.classList.add('bg-white', 'w-6');
+                    dot.classList.remove('bg-white/40', 'w-2');
+                } else {
+                    dot.classList.remove('bg-white', 'w-6');
+                    dot.classList.add('bg-white/40', 'w-2');
+                }
+            });
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide();
+            if (slideImages.length > 1) {
+                autoSlideInterval = setInterval(() => {
+                    currentSlide = (currentSlide + 1) % slideImages.length;
+                    updateSlider();
+                }, 3500); // Auto slide every 3.5 seconds
+            }
+        }
+
+        function stopAutoSlide() {
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = null;
+            }
+        }
+
+        const modal = document.getElementById('project-detail-modal');
+        document.querySelectorAll('.project-trigger').forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.getAttribute('data-title') || '';
+                const year = card.getAttribute('data-year') || '';
+                const desc = card.getAttribute('data-desc') || '';
+                const categoryStr = card.getAttribute('data-category') || '';
+                const toolsStr = card.getAttribute('data-tools') || '';
+                const imgsAttr = card.getAttribute('data-imgs') || card.getAttribute('data-img') || '';
+                
+                slideImages = imgsAttr.split(',').map(s => s.trim()).filter(Boolean);
+                currentSlide = 0;
+
+                document.getElementById('detail-modal-title').textContent = title;
+                document.getElementById('detail-modal-year').textContent = year;
+                document.getElementById('detail-modal-desc').textContent = desc;
+
+                const catContainer = document.getElementById('detail-modal-categories');
+                catContainer.innerHTML = categoryStr.split(',').map(c => 
+                    `<span class="px-2.5 py-1 bg-white/10 border border-white/15 rounded-full text-xs text-white/80 font-mono">${c.trim()}</span>`
+                ).join('');
+
+                const toolsContainer = document.getElementById('detail-modal-tools');
+                toolsContainer.innerHTML = toolsStr.split(',').map(t => 
+                    `<span class="px-2.5 py-1 bg-white/10 border border-white/15 rounded-full text-xs text-white/80 font-mono">${t.trim()}</span>`
+                ).join('');
+
+                const track = document.getElementById('modal-slides-track');
+                track.innerHTML = slideImages.map(img => 
+                    `<img src="${img}" class="w-full h-full object-cover flex-shrink-0" alt="${title}">`
+                ).join('');
+
+                const dotsContainer = document.getElementById('slider-dots');
+                dotsContainer.innerHTML = slideImages.map((_, idx) => 
+                    `<button class="slider-dot h-2 rounded-full transition-all duration-300 ${idx === 0 ? 'bg-white w-6' : 'bg-white/40 w-2'}" data-index="${idx}"></button>`
+                ).join('');
+
+                document.querySelectorAll('.slider-dot').forEach(dot => {
+                    dot.addEventListener('click', (e) => {
+                        currentSlide = parseInt(e.target.getAttribute('data-index'));
+                        updateSlider();
+                        startAutoSlide();
+                    });
+                });
+
+                updateSlider();
+                modal.classList.remove('hidden');
+                startAutoSlide();
+            });
+        });
+
+        document.getElementById('slider-prev-btn')?.addEventListener('click', () => {
+            if (slideImages.length <= 1) return;
+            currentSlide = (currentSlide - 1 + slideImages.length) % slideImages.length;
+            updateSlider();
+            startAutoSlide();
+        });
+
+        document.getElementById('slider-next-btn')?.addEventListener('click', () => {
+            if (slideImages.length <= 1) return;
+            currentSlide = (currentSlide + 1) % slideImages.length;
+            updateSlider();
+            startAutoSlide();
+        });
+
+        document.getElementById('close-detail-modal-btn')?.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            stopAutoSlide();
+        });
+    </script>
+</body>
+</html>
