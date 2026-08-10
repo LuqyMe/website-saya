@@ -8,10 +8,10 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts: Playfair Display & Inter -->
+    <!-- Google Fonts: Pixelify Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -21,15 +21,17 @@
 </head>
 <body class="antialiased">
 
+
+
     <!-- ULTRA-FUTURISTIC PRELOADER ANIMATION (NO CIRCLE SPINNER) -->
-    <div id="preloader" class="fixed inset-0 z-[100] bg-[#07080e] flex flex-col items-center justify-center">
+    <div id="preloader" class="fixed inset-0 z-[100] bg-[#38156e] flex flex-col items-center justify-center">
         <!-- Animated Progress Bar with Gradient Wave Shimmer -->
         <div class="w-64 sm:w-80 h-2 bg-white/10 rounded-full overflow-hidden mb-5 border border-white/15 p-0.5 shadow-inner">
             <div id="preloader-bar" class="h-full preloader-bar-glow rounded-full w-0"></div>
         </div>
 
         <div class="flex items-center justify-between w-64 sm:w-80 text-xs font-mono text-gray-400 tracking-wider">
-            <span id="preloader-status" class="text-cyan-400 font-semibold">INITIALIZING SYSTEM...</span>
+            <span id="preloader-status" class="text-yellow-400 font-semibold">INITIALIZING SYSTEM...</span>
             <span id="preloader-percent" class="text-white font-bold">0%</span>
         </div>
     </div>
@@ -47,7 +49,7 @@
             <!-- Logo Badge -->
             <a href="index.html" class="flex items-center gap-2.5 font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tighter hover:opacity-80 transition-opacity">
                 <span>Kq</span>
-                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 inline-block shadow-[0_0_12px_#00f0ff] animate-pulse"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 inline-block shadow-[0_0_12px_#ffd460] animate-pulse"></span>
             </a>
             
             <!-- Glow Nav Links -->
@@ -212,12 +214,12 @@
 
                 <!-- DIRECT NOTION LINK BANNER: "Other things i do" -->
                 <div class="mt-16 reveal-on-scroll delay-100">
-                    <a href="https://app.notion.com/p/Other-Things-I-Do-a5994d66da9c4033bb4705bb2bc45513" target="_blank" rel="noopener noreferrer" class="glass-panel p-8 sm:p-10 rounded-3xl border border-white/15 bg-gradient-to-r from-cyan-950/30 via-purple-950/20 to-black/40 hover:border-cyan-400/50 transition-all duration-500 group flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden">
-                        <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-cyan-400/10 rounded-full filter blur-3xl group-hover:bg-cyan-400/20 transition-all"></div>
+                    <a href="https://app.notion.com/p/Other-Things-I-Do-a5994d66da9c4033bb4705bb2bc45513" target="_blank" rel="noopener noreferrer" class="glass-panel p-8 sm:p-10 rounded-3xl border border-white/15 bg-gradient-to-r from-cyan-950/30 via-purple-950/20 to-black/40 hover:border-yellow-400/50 transition-all duration-500 group flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-yellow-400/10 rounded-full filter blur-3xl group-hover:bg-yellow-400/20 transition-all"></div>
                         
                         <div class="flex items-center gap-5 z-10">
-                            <div class="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-3xl group-hover:scale-110 group-hover:bg-white/20 group-hover:border-cyan-400/40 transition-all shadow-lg shrink-0">
-                                <i class="fas fa-bookmark text-cyan-400"></i>
+                            <div class="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-3xl group-hover:scale-110 group-hover:bg-white/20 group-hover:border-yellow-400/40 transition-all shadow-lg shrink-0">
+                                <i class="fas fa-bookmark text-yellow-400"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-mono text-cyan-300 uppercase tracking-widest block mb-1">Notion Workspace</span>
@@ -227,7 +229,7 @@
                         </div>
 
                         <div class="z-10 shrink-0">
-                            <span class="px-6 py-3 rounded-full font-mono text-xs sm:text-sm tracking-wider uppercase inline-flex items-center gap-2.5 border border-cyan-400/40 bg-cyan-400/10 text-cyan-300 font-semibold group-hover:bg-cyan-400 group-hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(0,240,255,0.2)]">
+                            <span class="px-6 py-3 rounded-full font-mono text-xs sm:text-sm tracking-wider uppercase inline-flex items-center gap-2.5 border border-yellow-400/40 bg-yellow-400/10 text-cyan-300 font-semibold group-hover:bg-yellow-400 group-hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(0,240,255,0.2)]">
                                 <span>Kunjungi Notion</span>
                                 <i class="fas fa-external-link-alt text-xs"></i>
                             </span>
@@ -468,11 +470,245 @@
             currentSlide = (currentSlide + 1) % slideImages.length;
             updateSlider();
             startAutoSlide();
+                <!-- Text Details Area -->
+                <div class="p-6 sm:p-8 bg-[#07070a]/95 backdrop-blur-xl border-t border-white/10 relative z-10">
+                    <div class="flex justify-between items-start mb-4">
+                        <h2 id="detail-modal-title" class="font-serif text-2xl sm:text-3xl text-white font-bold"></h2>
+                        <span id="detail-modal-year" class="font-mono text-xs text-white/80 border border-white/20 bg-white/5 px-3 py-1 rounded-full shrink-0"></span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <h4 class="text-xs font-mono text-white/50 uppercase mb-2">Kategori Proyek</h4>
+                            <div id="detail-modal-categories" class="flex flex-wrap gap-2"></div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-mono text-white/50 uppercase mb-2">Tools & Software</h4>
+                            <div id="detail-modal-tools" class="flex flex-wrap gap-2"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-mono text-white/50 uppercase mb-2">Deskripsi Proyek</h4>
+                        <p id="detail-modal-desc" class="text-gray-300 text-sm sm:text-base leading-relaxed font-light"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UI INTERACTION SCRIPTS -->
+    <script>
+        // ===== ULTRA-FUTURISTIC PRELOADER ENGINE (SMOOTH PACED ANIMATION) =====
+        const preloader = document.getElementById('preloader');
+        const preloaderBar = document.getElementById('preloader-bar');
+        const preloaderPercent = document.getElementById('preloader-percent');
+        const preloaderStatus = document.getElementById('preloader-status');
+
+        let progress = 0;
+        const statusTexts = ['INITIALIZING SYSTEM...', 'LOADING ASSETS...', 'PREPARING VISUALS...', 'WELCOME'];
+
+        const progressInterval = setInterval(() => {
+            // Smooth pacing step ~2.5s total duration
+            progress += Math.floor(Math.random() * 5) + 2;
+            if (progress > 100) progress = 100;
+
+            if (preloaderBar) preloaderBar.style.width = `${progress}%`;
+            if (preloaderPercent) preloaderPercent.textContent = `${progress}%`;
+            
+            if (progress < 30) {
+                if (preloaderStatus) preloaderStatus.textContent = statusTexts[0];
+            } else if (progress < 65) {
+                if (preloaderStatus) preloaderStatus.textContent = statusTexts[1];
+            } else if (progress < 92) {
+                if (preloaderStatus) preloaderStatus.textContent = statusTexts[2];
+            } else {
+                if (preloaderStatus) preloaderStatus.textContent = statusTexts[3];
+            }
+
+            if (progress >= 100) {
+                clearInterval(progressInterval);
+                setTimeout(() => {
+                    if (preloader) preloader.classList.add('loaded');
+                    // Trigger Initial Page Content Entrance Animation
+                    document.querySelectorAll('.initial-reveal').forEach(el => {
+                        el.classList.add('entered');
+                    });
+                }, 300);
+            }
+        }, 55);
+
+        // ===== STICKY HEADER SCROLL ENGINE =====
+        const headerEl = document.getElementById('header');
+        function handleHeaderScroll() {
+            if (!headerEl) return;
+            if (window.scrollY > 30) {
+                headerEl.classList.add('scrolled');
+            } else {
+                headerEl.classList.remove('scrolled');
+            }
+        }
+        window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+        handleHeaderScroll();
+
+        // ===== FUTURISTIC SCROLL REVEAL INTERSECTION OBSERVER =====
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // 3-IMAGE CAROUSEL & AUTO-SLIDE MODAL LOGIC
+        let currentSlide = 0;
+        let slideImages = [];
+        let autoSlideInterval = null;
+
+        function updateSlider() {
+            const track = document.getElementById('modal-slides-track');
+            if (!track) return;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            const counter = document.getElementById('slider-counter');
+            if (counter) counter.textContent = `${currentSlide + 1} / ${slideImages.length}`;
+
+            document.querySelectorAll('.slider-dot').forEach((dot, idx) => {
+                if (idx === currentSlide) {
+                    dot.classList.add('bg-white', 'w-6');
+                    dot.classList.remove('bg-white/40', 'w-2');
+                } else {
+                    dot.classList.remove('bg-white', 'w-6');
+                    dot.classList.add('bg-white/40', 'w-2');
+                }
+            });
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide();
+            if (slideImages.length > 1) {
+                autoSlideInterval = setInterval(() => {
+                    currentSlide = (currentSlide + 1) % slideImages.length;
+                    updateSlider();
+                }, 3500); // Auto slide every 3.5 seconds
+            }
+        }
+
+        function stopAutoSlide() {
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = null;
+            }
+        }
+
+        const modal = document.getElementById('project-detail-modal');
+        document.querySelectorAll('.project-trigger').forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.getAttribute('data-title') || '';
+                const year = card.getAttribute('data-year') || '';
+                const desc = card.getAttribute('data-desc') || '';
+                const categoryStr = card.getAttribute('data-category') || '';
+                const toolsStr = card.getAttribute('data-tools') || '';
+                const imgsAttr = card.getAttribute('data-imgs') || card.getAttribute('data-img') || '';
+                
+                slideImages = imgsAttr.split(',').map(s => s.trim()).filter(Boolean);
+                currentSlide = 0;
+
+                document.getElementById('detail-modal-title').textContent = title;
+                document.getElementById('detail-modal-year').textContent = year;
+                document.getElementById('detail-modal-desc').textContent = desc;
+
+                const catContainer = document.getElementById('detail-modal-categories');
+                catContainer.innerHTML = categoryStr.split(',').map(c => 
+                    `<span class="px-2.5 py-1 bg-white/10 border border-white/15 rounded-full text-xs text-white/80 font-mono">${c.trim()}</span>`
+                ).join('');
+
+                const toolsContainer = document.getElementById('detail-modal-tools');
+                toolsContainer.innerHTML = toolsStr.split(',').map(t => 
+                    `<span class="px-2.5 py-1 bg-white/10 border border-white/15 rounded-full text-xs text-white/80 font-mono">${t.trim()}</span>`
+                ).join('');
+
+                const track = document.getElementById('modal-slides-track');
+                track.innerHTML = slideImages.map(img => 
+                    `<img src="${img}" class="w-full h-full object-cover flex-shrink-0" alt="${title}">`
+                ).join('');
+
+                const dotsContainer = document.getElementById('slider-dots');
+                dotsContainer.innerHTML = slideImages.map((_, idx) => 
+                    `<button class="slider-dot h-2 rounded-full transition-all duration-300 ${idx === 0 ? 'bg-white w-6' : 'bg-white/40 w-2'}" data-index="${idx}"></button>`
+                ).join('');
+
+                document.querySelectorAll('.slider-dot').forEach(dot => {
+                    dot.addEventListener('click', (e) => {
+                        currentSlide = parseInt(e.target.getAttribute('data-index'));
+                        updateSlider();
+                        startAutoSlide();
+                    });
+                });
+
+                updateSlider();
+                modal.classList.remove('hidden');
+                startAutoSlide();
+            });
+        });
+
+        document.getElementById('slider-prev-btn')?.addEventListener('click', () => {
+            if (slideImages.length <= 1) return;
+            currentSlide = (currentSlide - 1 + slideImages.length) % slideImages.length;
+            updateSlider();
+            startAutoSlide();
+        });
+
+        document.getElementById('slider-next-btn')?.addEventListener('click', () => {
+            if (slideImages.length <= 1) return;
+            currentSlide = (currentSlide + 1) % slideImages.length;
+            updateSlider();
+            startAutoSlide();
         });
 
         document.getElementById('close-detail-modal-btn')?.addEventListener('click', () => {
             modal.classList.add('hidden');
             stopAutoSlide();
+        });
+
+    </script>
+
+    <!-- PIXEL DISSOLVE PAGE TRANSITION SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Create overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'pixel-transition-overlay';
+            overlay.id = 'pixel-transition-overlay';
+            
+            // Add 225 blocks (15x15)
+            for(let i=0; i<225; i++) {
+                const block = document.createElement('div');
+                block.className = 'pixel-block';
+                overlay.appendChild(block);
+            }
+            document.body.appendChild(overlay);
+
+            // Intercept link clicks for html pages
+            document.querySelectorAll('a[href]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    // Only intercept internal html links (e.g., index.html)
+                    // and not hash links
+                    if(href && href.includes('.html') && !href.startsWith('http') && this.target !== '_blank' && !href.startsWith('#')) {
+                        e.preventDefault();
+                        // Reshuffle delays for new dissolve in
+                        overlay.querySelectorAll('.pixel-block').forEach(b => {
+                            b.style.transitionDelay = (Math.random() * 0.3) + 's';
+                        });
+                        overlay.classList.add('active');
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 750); // wait for animation
+                    }
+                });
+            });
         });
     </script>
 </body>
