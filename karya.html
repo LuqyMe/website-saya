@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeri Karya | Khuluq - Portfolio</title>
+    <title>Karya | M. Ahsanil Khuluq</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,197 +16,296 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Custom Glassmorphism Styles -->
+    <!-- Custom Glassmorphism & Cyber Glitch Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased">
+<body class="antialiased bg-[#2b0f54] text-white">
 
 
 
-    <!-- ULTRA-FUTURISTIC PRELOADER ANIMATION (NO CIRCLE SPINNER) -->
-    <div id="preloader" class="fixed inset-0 z-[100] bg-[#38156e] flex flex-col items-center justify-center">
-        <!-- Animated Progress Bar with Gradient Wave Shimmer -->
-        <div class="w-64 sm:w-80 h-2 bg-white/10 rounded-full overflow-hidden mb-5 border border-white/15 p-0.5 shadow-inner">
-            <div id="preloader-bar" class="h-full preloader-bar-glow rounded-full w-0"></div>
-        </div>
-
-        <div class="flex items-center justify-between w-64 sm:w-80 text-xs font-mono text-gray-400 tracking-wider">
-            <span id="preloader-status" class="text-yellow-400 font-semibold">INITIALIZING SYSTEM...</span>
-            <span id="preloader-percent" class="text-white font-bold">0%</span>
-        </div>
-    </div>
-
-    <!-- SLEEK MINIMALIST MESH GRADIENT BACKGROUND (VERCEL/LINEAR STYLE) -->
-    <div id="mesh-background">
-        <div class="mesh-orb mesh-1"></div>
-        <div class="mesh-orb mesh-2"></div>
-        <div class="mesh-orb mesh-3"></div>
-    </div>
-
-    <!-- STICKY FIXED GLASS NAVBAR (FOLLOWS SCROLL WITH GLOW NAV LINKS) -->
-    <header id="header" class="fixed top-0 left-0 w-full z-50 py-5 sm:py-6 px-6 sm:px-12 transition-all duration-300 initial-reveal">
+    <!-- STICKY FIXED NAVBAR -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 py-2 px-6 sm:px-12 transition-all duration-300 initial-reveal">
         <div class="container mx-auto max-w-6xl flex justify-between items-center">
             <!-- Logo Badge -->
-            <a href="index.html" class="flex items-center gap-2.5 font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tighter hover:opacity-80 transition-opacity">
-                <span>Kq</span>
-                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 inline-block shadow-[0_0_12px_#ffd460] animate-pulse"></span>
+            <a href="index.html#home" class="flex items-center gap-2.5 font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tighter hover:opacity-80 transition-opacity">
+                <span class="font-pixel text-xl tracking-widest text-white">Kq</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-orange-500 inline-block shadow-[0_0_12px_#ff6f61] animate-pulse"></span>
             </a>
             
-            <!-- Glow Nav Links -->
+            <!-- Dynamic Scrollspy Nav Links -->
             <div class="flex items-center space-x-2 sm:space-x-3 text-white/90 text-xs sm:text-sm font-mono tracking-wide">
-                <a href="index.html#about" class="px-4 py-2 rounded-full nav-link-glow border border-transparent">Tentang</a>
-                <a href="karya.html" class="px-4 py-2 rounded-full nav-link-glow nav-active">Karya</a>
-                <a href="index.html#contact" class="px-4 py-2 rounded-full nav-link-glow border border-transparent">Kontak</a>
+                <a href="index.html#about" class="px-3 py-1.5 rounded-full nav-link-glow border border-transparent hover:text-orange-400">Tentang</a>
+                <a href="karya.html" class="px-3 py-1.5 rounded-full nav-link-glow border border-transparent text-orange-400 font-bold">Karya</a>
+                <a href="index.html#contact" class="px-3 py-1.5 rounded-full nav-link-glow border border-transparent hover:text-orange-400">Kontak</a>
             </div>
         </div>
     </header>
 
     <main class="relative z-10 pt-28 pb-20 md:pb-32 min-h-screen">
-        <!-- ===== PORTFOLIO GALLERY SECTION ===== -->
-        <section id="portfolio-gallery">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 initial-reveal delay-100">
-                    <h1 class="font-serif text-5xl md:text-7xl text-white drop-shadow-2xl mb-4">Galeri Karya</h1>
-                    <p class="text-gray-400 text-lg max-w-2xl mx-auto">Eksplorasi visual dan proyek-proyek terbaru yang telah saya kerjakan.</p>
+        <section id="portfolio-gallery" class="relative z-10">
+            <div class="container mx-auto px-6 sm:px-12 max-w-6xl">
+                <!-- Section Header -->
+                <div class="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
+                    <div>
+                        <div class="inline-flex items-center gap-3 mb-4">
+                            <span class="w-12 h-[2px] bg-yellow-400"></span>
+                            <span class="text-yellow-400 font-mono tracking-[0.2em] text-sm uppercase font-bold">Arsip Lengkap</span>
+                        </div>
+                        <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight drop-shadow-[4px_4px_0_rgba(0,0,0,1)]">
+                            Semua <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 stroke-text-yellow">Karya</span>
+                        </h2>
+                    </div>
+                    <p class="text-gray-400 max-w-md text-sm md:text-base font-sans leading-relaxed bg-black/40 p-4 border-l-4 border-yellow-400">
+                        Koleksi lengkap perjalanan kreatif, eksperimen, dan proyek profesional yang pernah saya bangun.
+                    </p>
                 </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+
+                <!-- JRPG VERTICAL STACK LAYOUT -->
+                <div class="flex flex-col gap-24 sm:gap-32 w-full max-w-5xl mx-auto">
                     
-                    <!-- Proyek 1 -->
-                    <div id="proyek1" class="portfolio-card glass-panel group fade-up cursor-pointer project-trigger"
-                         data-title="AR Soccer Strategy: Real-Time Virtual Set Studio"
-                         data-year="2026"
-                         data-img="images/Proyek1/WhatsApp Image 2026-07-23 at 13.45.59.jpeg"
-                         data-imgs="images/Proyek1/WhatsApp Image 2026-07-23 at 13.45.59.jpeg,images/Proyek1/WhatsApp Image 2026-07-23 at 13.48.28.jpeg,images/Proyek1/WhatsApp Image 2026-07-23 at 13.44.26.jpeg"
-                         data-desc="Proyek ini menghadirkan ekosistem Virtual Set Studio berbasis Augmented Reality (AR) untuk siaran analisis taktik sepak bola. Sistem mengotomatisasi pemrosesan data formasi secara real-time dari API Livescore (JSON) menjadi objek visual 3D interaktif di atas marker fisik. Dilengkapi aplikasi remote Android nirkabel berbasis Netcode for GameObjects (NGO) & Unity Relay, presenter dapat mengendalikan pergerakan posisi pemain secara responsif melalui fitur drag & drop."
-                         data-category="AR & Virtual Set Studio, Real-Time Interactive"
-                         data-tools="Unity Engine, C#, Vuforia SDK, Netcode for GameObjects, Unity Relay, API Livescore (JSON), OBS Studio, Android SDK">
-                        <div class="portfolio-image-container">
-                            <img src="images/Proyek1/WhatsApp Image 2026-07-23 at 13.45.59.jpeg" alt="AR Soccer Strategy: Real-Time Virtual Set Studio" class="portfolio-image w-full h-56 object-cover" loading="lazy" decoding="async">
-                        </div>
-                        <div class="portfolio-text-content mt-6 px-2 pb-2">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="font-serif text-2xl text-white">AR Soccer Strategy</h3>
-                                <span class="text-white/70 text-xs font-mono border border-white/20 px-2 py-1 rounded-full">2026</span>
+                    <!-- PROYEK 1 -->
+                    <div class="w-full shrink-0 reveal-on-scroll">
+                        <div class="relative w-full mx-auto group project-trigger cursor-pointer jrpg-frame p-6 sm:p-12"
+                             style="--neon-glow-color: #38156e; background: rgba(56, 21, 110, 0.4);"
+                             data-title="AR Soccer Strategy: Real-Time Virtual Set Studio"
+                             data-year="2026"
+                             data-img="images/Proyek1/WhatsApp Image 2026-07-23 at 13.45.59.jpeg"
+                             data-imgs="images/Proyek1/WhatsApp Image 2026-07-23 at 13.45.59.jpeg,images/Proyek1/WhatsApp Image 2026-07-23 at 13.48.28.jpeg,images/Proyek1/WhatsApp Image 2026-07-23 at 13.44.26.jpeg"
+                             data-desc="Proyek ini menghadirkan ekosistem Virtual Set Studio berbasis Augmented Reality (AR) untuk siaran analisis taktik sepak bola. Sistem mengotomatisasi pemrosesan data formasi secara real-time dari API Livescore (JSON) menjadi objek visual 3D interaktif di atas marker fisik. Dilengkapi aplikasi remote Android nirkabel berbasis Netcode for GameObjects (NGO) & Unity Relay, presenter dapat mengendalikan pergerakan posisi pemain secara responsif melalui fitur drag & drop."
+                             data-category="AR & Virtual Set Studio, Real-Time Interactive"
+                             data-tools="Unity Engine, C#, Vuforia SDK, OBS Studio">
+                            
+                            <div class="text-center mb-8 px-4">
+                                <h3 class="font-serif text-2xl sm:text-4xl text-white font-bold tracking-tight drop-shadow-[2px_4px_0_rgba(0,0,0,1)]">
+                                    AR Soccer Strategy: Real-Time Virtual Set Studio
+                                </h3>
                             </div>
-                            <p class="text-sm text-gray-400 leading-relaxed">
-                                Virtual Set Studio berbasis Augmented Reality (AR) untuk siaran analisis taktik sepak bola.
-                            </p>
+
+                            <div class="flex flex-col lg:flex-row items-center lg:items-start min-h-[400px] relative">
+                                <div class="relative w-full lg:w-[60%] h-[250px] sm:h-[400px] shrink-0 pointer-events-none">
+                                    <img src="images/Proyek1/WhatsApp Image 2026-07-23 at 13.48.28.jpeg" alt="BG 1" class="absolute right-[5%] top-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <img src="images/Proyek1/WhatsApp Image 2026-07-23 at 13.44.26.jpeg" alt="BG 2" class="absolute left-0 bottom-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] aspect-video z-20 group-hover:scale-105 transition-transform duration-500 shadow-[15px_15px_0_rgba(0,0,0,1)]">
+                                        <img src="images/Proyek1/WhatsApp Image 2026-07-23 at 13.45.59.jpeg" alt="Main" class="w-full h-full object-cover border-[4px] border-yellow-400 group-hover:border-white transition-colors duration-500">
+                                    </div>
+                                </div>
+                                <div class="relative w-full lg:w-[40%] mt-8 lg:mt-0 lg:-ml-12 lg:translate-y-12 z-30 px-6 sm:px-12 lg:px-0">
+                                    <div class="bg-[#090212]/95 backdrop-blur-md border border-white/10 shadow-[10px_10px_0_rgba(0,0,0,1)] p-6 sm:p-8 rotate-3 group-hover:rotate-0 transition-transform duration-500 pointer-events-auto">
+                                        <p class="text-gray-300 font-sans text-sm sm:text-base leading-relaxed">
+                                            Proyek ini menghadirkan ekosistem Virtual Set Studio berbasis Augmented Reality (AR) untuk siaran analisis taktik sepak bola. Sistem mengotomatisasi pemrosesan data formasi secara real-time dari API Livescore (JSON) menjadi objek visual 3D interaktif di atas marker fisik. Dilengkapi aplikasi remote Android nirkabel berbasis Netcode for GameObjects (NGO) & Unity Relay, presenter dapat mengendalikan pergerakan posisi pemain secara responsif melalui fitur drag & drop.
+                                        </p>
+                                        <div class="mt-4 flex flex-wrap gap-2 text-xs font-mono text-yellow-400">
+                                            <span class="px-2.5 py-1 bg-yellow-400/10 border border-yellow-400/30 rounded-full">Unity Engine</span>
+                                            <span class="px-2.5 py-1 bg-yellow-400/10 border border-yellow-400/30 rounded-full">C#</span>
+                                            <span class="px-2.5 py-1 bg-yellow-400/10 border border-yellow-400/30 rounded-full">Vuforia SDK</span>
+                                            <span class="px-2.5 py-1 bg-yellow-400/10 border border-yellow-400/30 rounded-full">OBS Studio</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Proyek 2 -->
-                    <div id="proyek2" class="portfolio-card glass-panel group fade-up cursor-pointer project-trigger"
-                         data-title="Environment Artist : Playland Hidden Gems"
-                         data-year="2024 • Durasi: 3 Bulan"
-                         data-img="images/Proyek2/Fullmap..gif"
-                         data-imgs="images/Proyek2/Fullmap..gif,images/Proyek2/Path.gif,images/Proyek2/Building.png"
-                         data-desc="Membuat deisign dan map pada proyek game Playland Hidden Gems di lokasi makassar. Durasi pengerjaan: 3 Bulan."
-                         data-category="Environment pixel artist, animasi pixel, design map, dan objek pixel"
-                         data-tools="Aseprite, Photoshop">
-                        <div class="portfolio-image-container">
-                            <img src="images/Proyek2/Building.png" data-static="images/Proyek2/Building.png" data-anim="images/Proyek2/Fullmap..gif" alt="Environment Artist : Playland Hidden Gems" class="portfolio-image hover-anim-img w-full h-56 object-cover" loading="lazy" decoding="async">
-                        </div>
-                        <div class="portfolio-text-content mt-6 px-2 pb-2">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="font-serif text-2xl text-white">Environment Artist : Playland Hidden Gems</h3>
-                                <span class="text-white/70 text-xs font-mono border border-white/20 px-2 py-1 rounded-full">2024</span>
+                    <!-- PROYEK 2 -->
+                    <div class="w-full shrink-0 reveal-on-scroll">
+                        <div class="relative w-full mx-auto group project-trigger cursor-pointer jrpg-frame p-6 sm:p-12"
+                             style="--neon-glow-color: #38156e; background: rgba(56, 21, 110, 0.4);"
+                             data-title="Environment Artist : Playland Hidden Gems"
+                             data-year="2024 • Durasi: 3 Bulan"
+                             data-img="images/Proyek2/Fullmap..gif"
+                             data-imgs="images/Proyek2/Fullmap..gif,images/Proyek2/Path.gif,images/Proyek2/Building.png"
+                             data-desc="Membuat deisign dan map pada proyek game Playland Hidden Gems di lokasi makassar. Durasi pengerjaan: 3 Bulan."
+                             data-category="Environment pixel artist, animasi pixel, design map, dan objek pixel"
+                             data-tools="Aseprite, Photoshop">
+                            
+                            <div class="text-center mb-8 px-4">
+                                <h3 class="font-serif text-2xl sm:text-4xl text-white font-bold tracking-tight drop-shadow-[2px_4px_0_rgba(0,0,0,1)]">
+                                    Environment Artist : Playland Hidden Gems
+                                </h3>
                             </div>
-                            <p class="text-sm text-gray-400 leading-relaxed">
-                                Membuat deisign dan map pada proyek game Playland Hidden Gems di lokasi makassar.
-                            </p>
+
+                            <div class="flex flex-col lg:flex-row items-center lg:items-start min-h-[400px] relative">
+                                <div class="relative w-full lg:w-[60%] h-[250px] sm:h-[400px] shrink-0 pointer-events-none">
+                                    <img src="images/Proyek2/Path.gif" alt="BG 1" class="absolute right-[5%] top-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <img src="images/Proyek2/Building.png" alt="BG 2" class="absolute left-0 bottom-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] aspect-video z-20 group-hover:scale-105 transition-transform duration-500 shadow-[15px_15px_0_rgba(0,0,0,1)]">
+                                        <img src="images/Proyek2/Fullmap..gif" alt="Main" class="w-full h-full object-cover border-[4px] border-yellow-400 group-hover:border-white transition-colors duration-500">
+                                    </div>
+                                </div>
+                                <div class="relative w-full lg:w-[40%] mt-8 lg:mt-0 lg:-ml-12 lg:translate-y-12 z-30 px-6 sm:px-12 lg:px-0">
+                                    <div class="bg-[#090212]/95 backdrop-blur-md border border-white/10 shadow-[10px_10px_0_rgba(0,0,0,1)] p-6 sm:p-8 rotate-3 group-hover:rotate-0 transition-transform duration-500 pointer-events-auto">
+                                        <p class="text-gray-300 font-sans text-sm sm:text-base leading-relaxed">
+                                            Membuat deisign dan map pada proyek game Playland Hidden Gems di lokasi makassar. Durasi pengerjaan: 3 Bulan.
+                                        </p>
+                                        <div class="mt-4 flex flex-wrap gap-2 text-xs font-mono text-yellow-400">
+                                            <span class="px-2.5 py-1 bg-yellow-400/10 border border-yellow-400/30 rounded-full">Aseprite</span>
+                                            <span class="px-2.5 py-1 bg-yellow-400/10 border border-yellow-400/30 rounded-full">Photoshop</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Proyek 3 -->
-                    <div id="proyek3" class="portfolio-card glass-panel group fade-up cursor-pointer project-trigger"
-                         data-title="UI/UX : Magic Spell"
-                         data-year="2024 • Durasi: 1 Bulan"
-                         data-img="images/Proyek3/UI Tutorial.gif"
-                         data-imgs="images/Proyek3/UI Tutorial.gif,images/Proyek3/UI Logo.png,images/Proyek3/UI_Credit.png"
-                         data-desc="Membuat UI/UX dan Logo pada game Magic Speel. Durasi pengerjaan: 1 Bulan."
-                         data-category="UI/UX designer"
-                         data-tools="Aseprite, Photoshop">
-                        <div class="portfolio-image-container">
-                            <img src="images/Proyek3/UI Logo.png" data-static="images/Proyek3/UI Logo.png" data-anim="images/Proyek3/UI Tutorial.gif" alt="UI/UX : Magic Spell" class="portfolio-image hover-anim-img w-full h-56 object-cover" loading="lazy" decoding="async">
-                        </div>
-                        <div class="portfolio-text-content mt-6 px-2 pb-2">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="font-serif text-2xl text-white">UI/UX : Magic Spell</h3>
-                                <span class="text-white/70 text-xs font-mono border border-white/20 px-2 py-1 rounded-full">2024</span>
+                    <!-- PROYEK 3 -->
+                    <div class="w-full shrink-0 reveal-on-scroll">
+                        <div class="relative w-full mx-auto group project-trigger cursor-pointer jrpg-frame p-6 sm:p-12"
+                             style="--neon-glow-color: #38156e; background: rgba(56, 21, 110, 0.4);"
+                             data-title="UI/UX : Magic Spell"
+                             data-year="2024 • Durasi: 1 Bulan"
+                             data-img="images/Proyek3/UI Tutorial.gif"
+                             data-imgs="images/Proyek3/UI Tutorial.gif,images/Proyek3/UI Logo.png,images/Proyek3/UI_Credit.png"
+                             data-desc="Membuat UI/UX dan Logo pada game Magic Speel. Durasi pengerjaan: 1 Bulan."
+                             data-category="UI/UX designer"
+                             data-tools="Photoshop">
+                            
+                            <div class="text-center mb-8 px-4">
+                                <h3 class="font-serif text-2xl sm:text-4xl text-white font-bold tracking-tight drop-shadow-[2px_4px_0_rgba(0,0,0,1)]">
+                                    UI/UX : Magic Spell
+                                </h3>
                             </div>
-                            <p class="text-sm text-gray-400 leading-relaxed">
-                                Membuat UI/UX dan Logo pada game Magic Speel.
-                            </p>
+
+                            <div class="flex flex-col lg:flex-row items-center lg:items-start min-h-[400px] relative">
+                                <div class="relative w-full lg:w-[60%] h-[250px] sm:h-[400px] shrink-0 pointer-events-none">
+                                    <img src="images/Proyek3/UI Logo.png" alt="BG 1" class="absolute right-[5%] top-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <img src="images/Proyek3/UI_Credit.png" alt="BG 2" class="absolute left-0 bottom-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] aspect-video z-20 group-hover:scale-105 transition-transform duration-500 shadow-[15px_15px_0_rgba(0,0,0,1)]">
+                                        <img src="images/Proyek3/UI Tutorial.gif" alt="Main" class="w-full h-full object-cover border-[4px] border-yellow-400 group-hover:border-white transition-colors duration-500">
+                                    </div>
+                                </div>
+                                <div class="relative w-full lg:w-[40%] mt-8 lg:mt-0 lg:-ml-12 lg:translate-y-12 z-30 px-6 sm:px-12 lg:px-0">
+                                    <div class="bg-[#090212]/95 backdrop-blur-md border border-white/10 shadow-[10px_10px_0_rgba(0,0,0,1)] p-6 sm:p-8 rotate-3 group-hover:rotate-0 transition-transform duration-500 pointer-events-auto">
+                                        <p class="text-gray-300 font-sans text-sm sm:text-base leading-relaxed">
+                                            Membuat UI/UX dan Logo pada game Magic Speel. Durasi pengerjaan: 1 Bulan.
+                                        </p>
+                                        <div class="mt-4 flex flex-wrap gap-2 text-xs font-mono text-yellow-400">
+                                            <span class="px-2.5 py-1 bg-yellow-400/10 border border-yellow-400/30 rounded-full">Photoshop</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Proyek 4 -->
-                    <div id="proyek4" class="portfolio-card glass-panel group fade-up cursor-pointer project-trigger"
-                         data-title="Environment Artist : Road Of Spices"
-                         data-year="2023 • Durasi: 4 Bulan"
-                         data-img="images/Proyek4/Desain tanpa judul (9).png"
-                         data-imgs="images/Proyek4/Desain tanpa judul (9).png,images/Proyek4/Desain tanpa judul (8).png,images/Proyek4/Desain tanpa judul (10).png"
-                         data-desc="Riset implementasi pembuatan environment untuk pembuatan proyek game Road Of Spices. Durasi pengerjaan: 4 Bulan."
-                         data-category="Environment Pixel Artist"
-                         data-tools="Aseprite, Photoshop">
-                        <div class="portfolio-image-container">
-                            <img src="images/Proyek4/Desain tanpa judul (9).png" alt="Environment Artist : Road Of Spices" class="portfolio-image w-full h-56 object-cover" loading="lazy" decoding="async">
-                        </div>
-                        <div class="portfolio-text-content mt-6 px-2 pb-2">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="font-serif text-2xl text-white">Environment Artist : Road Of Spices</h3>
-                                <span class="text-white/70 text-xs font-mono border border-white/20 px-2 py-1 rounded-full">2023</span>
+                    <!-- PROYEK 4 -->
+                    <div class="w-full shrink-0 reveal-on-scroll">
+                        <div class="relative w-full mx-auto group project-trigger cursor-pointer jrpg-frame p-6 sm:p-12"
+                             style="--neon-glow-color: #38156e; background: rgba(56, 21, 110, 0.4);"
+                             data-title="Environment Artist : Road Of Spices"
+                             data-year="2023 • Durasi: 4 Bulan"
+                             data-img="images/Proyek4/Desain tanpa judul (9).png"
+                             data-imgs="images/Proyek4/Desain tanpa judul (9).png,images/Proyek4/Desain tanpa judul (8).png,images/Proyek4/Desain tanpa judul (10).png"
+                             data-desc="Riset implementasi pembuatan environment untuk pembuatan proyek game Road Of Spices. Durasi pengerjaan: 4 Bulan."
+                             data-category="Environment Pixel Artist"
+                             data-tools="Aseprite, Photoshop">
+                            
+                            <div class="text-center mb-8 px-4">
+                                <h3 class="font-serif text-2xl sm:text-4xl text-white font-bold tracking-tight drop-shadow-[2px_4px_0_rgba(0,0,0,1)]">
+                                    Environment Artist : Road Of Spices
+                                </h3>
                             </div>
-                            <p class="text-sm text-gray-400 leading-relaxed">
-                                Riset implementasi pembuatan environment untuk pembuatan proyek game Road Of Spices.
-                            </p>
+
+                            <div class="flex flex-col lg:flex-row items-center lg:items-start min-h-[400px] relative">
+                                <div class="relative w-full lg:w-[60%] h-[250px] sm:h-[400px] shrink-0 pointer-events-none">
+                                    <img src="images/Proyek4/Desain tanpa judul (8).png" alt="BG 1" class="absolute right-[5%] top-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <img src="images/Proyek4/Desain tanpa judul (10).png" alt="BG 2" class="absolute left-0 bottom-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] aspect-video z-20 group-hover:scale-105 transition-transform duration-500 shadow-[15px_15px_0_rgba(0,0,0,1)]">
+                                        <img src="images/Proyek4/Desain tanpa judul (9).png" alt="Main" class="w-full h-full object-cover border-[4px] border-yellow-400 group-hover:border-white transition-colors duration-500">
+                                    </div>
+                                </div>
+                                <div class="relative w-full lg:w-[40%] mt-8 lg:mt-0 lg:-ml-12 lg:translate-y-12 z-30 px-6 sm:px-12 lg:px-0">
+                                    <div class="bg-[#090212]/95 backdrop-blur-md border border-white/10 shadow-[10px_10px_0_rgba(0,0,0,1)] p-6 sm:p-8 rotate-3 group-hover:rotate-0 transition-transform duration-500 pointer-events-auto">
+                                        <p class="text-gray-300 font-sans text-sm sm:text-base leading-relaxed">
+                                            Riset implementasi pembuatan environment untuk pembuatan proyek game Road Of Spices. Durasi pengerjaan: 4 Bulan.
+                                        </p>
+                                        <div class="mt-4 flex flex-wrap gap-2 text-xs font-mono text-yellow-400">
+                                            <span class="px-2.5 py-1 bg-yellow-400/10 border border-yellow-400/30 rounded-full">Aseprite</span>
+                                            <span class="px-2.5 py-1 bg-yellow-400/10 border border-yellow-400/30 rounded-full">Photoshop</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Proyek 5 -->
-                    <div id="proyek5" class="portfolio-card glass-panel group fade-up cursor-pointer project-trigger"
-                         data-title="Environment Bothwill: Flip the Night"
-                         data-year="2022 • Durasi: 2 Bulan"
-                         data-img="images/Proyek5/Porto.png"
-                         data-imgs="images/Proyek5/Porto.png,images/Proyek5/Porto (1).png,images/Proyek5/Porto (2).png"
-                         data-desc="Riset dan implementasi pembuatan environment untuk pembuatan proyek game Bothwill: Flip the Night. Durasi pengerjaan: 2 Bulan."
-                         data-category="Environment Pixel Artist"
-                         data-tools="Aseprite, Photoshop">
-                        <div class="portfolio-image-container">
-                            <img src="images/Proyek5/Porto.png" alt="Environment Bothwill: Flip the Night" class="portfolio-image w-full h-56 object-cover" loading="lazy" decoding="async">
-                        </div>
-                        <div class="portfolio-text-content mt-6 px-2 pb-2">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="font-serif text-2xl text-white">Environment Bothwill: Flip the Night</h3>
-                                <span class="text-white/70 text-xs font-mono border border-white/20 px-2 py-1 rounded-full">2022</span>
+                    <!-- PROYEK 5 -->
+                    <div class="w-full shrink-0 reveal-on-scroll">
+                        <div class="relative w-full mx-auto group project-trigger cursor-pointer jrpg-frame p-6 sm:p-12"
+                             style="--neon-glow-color: #38156e; background: rgba(56, 21, 110, 0.4);"
+                             data-title="Environment Bothwill: Flip the Night"
+                             data-year="2022 • Durasi: 2 Bulan"
+                             data-img="images/Proyek5/Porto.png"
+                             data-imgs="images/Proyek5/Porto.png,images/Proyek5/Porto (1).png,images/Proyek5/Porto (2).png"
+                             data-desc="Riset dan implementasi pembuatan environment untuk pembuatan proyek game Bothwill: Flip the Night. Durasi pengerjaan: 2 Bulan."
+                             data-category="Environment Pixel Artist"
+                             data-tools="Aseprite, Photoshop">
+                            
+                            <div class="text-center mb-8 px-4">
+                                <h3 class="font-serif text-2xl sm:text-4xl text-white font-bold tracking-tight drop-shadow-[2px_4px_0_rgba(0,0,0,1)]">
+                                    Environment Bothwill: Flip the Night
+                                </h3>
                             </div>
-                            <p class="text-sm text-gray-400 leading-relaxed">
-                                Riset dan implementasi pembuatan environment untuk pembuatan proyek game Bothwill: Flip the Night.
-                            </p>
+
+                            <div class="flex flex-col lg:flex-row items-center lg:items-start min-h-[400px] relative">
+                                <div class="relative w-full lg:w-[60%] h-[250px] sm:h-[400px] shrink-0 pointer-events-none">
+                                    <img src="images/Proyek5/Porto (1).png" alt="BG 1" class="absolute right-[5%] top-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <img src="images/Proyek5/Porto (2).png" alt="BG 2" class="absolute left-0 bottom-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] aspect-video z-20 group-hover:scale-105 transition-transform duration-500 shadow-[15px_15px_0_rgba(0,0,0,1)]">
+                                        <img src="images/Proyek5/Porto.png" alt="Main" class="w-full h-full object-cover border-[4px] border-yellow-400 group-hover:border-white transition-colors duration-500">
+                                    </div>
+                                </div>
+                                <div class="relative w-full lg:w-[40%] mt-8 lg:mt-0 lg:-ml-12 lg:translate-y-12 z-30 px-6 sm:px-12 lg:px-0">
+                                    <div class="bg-[#090212]/95 backdrop-blur-md border border-white/10 shadow-[10px_10px_0_rgba(0,0,0,1)] p-6 sm:p-8 rotate-3 group-hover:rotate-0 transition-transform duration-500 pointer-events-auto">
+                                        <p class="text-gray-300 font-sans text-sm sm:text-base leading-relaxed">
+                                            Riset dan implementasi pembuatan environment untuk pembuatan proyek game Bothwill: Flip the Night. Durasi pengerjaan: 2 Bulan.
+                                        </p>
+                                        <div class="mt-4 flex flex-wrap gap-2 text-xs font-mono text-yellow-400">
+                                            <span class="px-2.5 py-1 bg-yellow-400/10 border border-yellow-400/30 rounded-full">Aseprite</span>
+                                            <span class="px-2.5 py-1 bg-yellow-400/10 border border-yellow-400/30 rounded-full">Photoshop</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Proyek 6 -->
-                    <div id="proyek6" class="portfolio-card glass-panel group fade-up cursor-pointer project-trigger"
-                         data-title="UI/UX Main Menu dan Assets Game “Trash City”"
-                         data-year="2022 • Durasi: 3 Bulan"
-                         data-img="images/Proyek6/Porto.png"
-                         data-imgs="images/Proyek6/Porto.png,images/Proyek6/Porto (1).png,images/Proyek6/Porto (2).png"
-                         data-desc="Riset dan implementasi pembuatan UI/UX dan assets pada proyek game Trash City. Durasi pengerjaan: 3 Bulan."
-                         data-category="Environment Pixel Artist"
-                         data-tools="Photoshop">
-                        <div class="portfolio-image-container">
-                            <img src="images/Proyek6/Porto.png" alt="UI/UX Main Menu dan Assets Game “Trash City”" class="portfolio-image w-full h-56 object-cover" loading="lazy" decoding="async">
-                        </div>
-                        <div class="portfolio-text-content mt-6 px-2 pb-2">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="font-serif text-2xl text-white">UI/UX Main Menu & Assets Game “Trash City”</h3>
-                                <span class="text-white/70 text-xs font-mono border border-white/20 px-2 py-1 rounded-full">2022</span>
+                    <!-- PROYEK 6 -->
+                    <div class="w-full shrink-0 reveal-on-scroll">
+                        <div class="relative w-full mx-auto group project-trigger cursor-pointer jrpg-frame p-6 sm:p-12"
+                             style="--neon-glow-color: #38156e; background: rgba(56, 21, 110, 0.4);"
+                             data-title="UI/UX Main Menu dan Assets Game “Trash City”"
+                             data-year="2022 • Durasi: 3 Bulan"
+                             data-img="images/Proyek6/Porto.png"
+                             data-imgs="images/Proyek6/Porto.png,images/Proyek6/Porto (1).png,images/Proyek6/Porto (2).png"
+                             data-desc="Riset dan implementasi pembuatan UI/UX dan assets pada proyek game Trash City. Durasi pengerjaan: 3 Bulan."
+                             data-category="Environment Pixel Artist"
+                             data-tools="Photoshop">
+                            
+                            <div class="text-center mb-8 px-4">
+                                <h3 class="font-serif text-2xl sm:text-4xl text-white font-bold tracking-tight drop-shadow-[2px_4px_0_rgba(0,0,0,1)]">
+                                    UI/UX Main Menu dan Assets Game “Trash City”
+                                </h3>
                             </div>
-                            <p class="text-sm text-gray-400 leading-relaxed">
-                                Riset dan implementasi pembuatan UI/UX dan assets pada proyek game Trash City.
-                            </p>
+
+                            <div class="flex flex-col lg:flex-row items-center lg:items-start min-h-[400px] relative">
+                                <div class="relative w-full lg:w-[60%] h-[250px] sm:h-[400px] shrink-0 pointer-events-none">
+                                    <img src="images/Proyek6/Porto (1).png" alt="BG 1" class="absolute right-[5%] top-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <img src="images/Proyek6/Porto (2).png" alt="BG 2" class="absolute left-0 bottom-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] aspect-video z-20 group-hover:scale-105 transition-transform duration-500 shadow-[15px_15px_0_rgba(0,0,0,1)]">
+                                        <img src="images/Proyek6/Porto.png" alt="Main" class="w-full h-full object-cover border-[4px] border-yellow-400 group-hover:border-white transition-colors duration-500">
+                                    </div>
+                                </div>
+                                <div class="relative w-full lg:w-[40%] mt-8 lg:mt-0 lg:-ml-12 lg:translate-y-12 z-30 px-6 sm:px-12 lg:px-0">
+                                    <div class="bg-[#090212]/95 backdrop-blur-md border border-white/10 shadow-[10px_10px_0_rgba(0,0,0,1)] p-6 sm:p-8 rotate-3 group-hover:rotate-0 transition-transform duration-500 pointer-events-auto">
+                                        <p class="text-gray-300 font-sans text-sm sm:text-base leading-relaxed">
+                                            Riset dan implementasi pembuatan UI/UX dan assets pada proyek game Trash City. Durasi pengerjaan: 3 Bulan.
+                                        </p>
+                                        <div class="mt-4 flex flex-wrap gap-2 text-xs font-mono text-yellow-400">
+                                            <span class="px-2 py-1 bg-yellow-400/10 border border-yellow-400/30">Photoshop</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -214,22 +313,23 @@
 
                 <!-- DIRECT NOTION LINK BANNER: "Other things i do" -->
                 <div class="mt-16 reveal-on-scroll delay-100">
-                    <a href="https://app.notion.com/p/Other-Things-I-Do-a5994d66da9c4033bb4705bb2bc45513" target="_blank" rel="noopener noreferrer" class="glass-panel p-8 sm:p-10 rounded-3xl border border-white/15 bg-gradient-to-r from-cyan-950/30 via-purple-950/20 to-black/40 hover:border-yellow-400/50 transition-all duration-500 group flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden">
-                        <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-yellow-400/10 rounded-full filter blur-3xl group-hover:bg-yellow-400/20 transition-all"></div>
+                    <a href="https://app.notion.com/p/Other-Things-I-Do-a5994d66da9c4033bb4705bb2bc45513" target="_blank" rel="noopener noreferrer" 
+                       class="jrpg-frame p-8 sm:p-10 border-4 border-yellow-400 bg-[#38156e]/80 hover:bg-[#38156e] transition-all duration-300 group flex flex-col md:flex-row items-center justify-between gap-6 shadow-[10px_10px_0_rgba(0,0,0,1)] hover:shadow-[15px_15px_0_rgba(0,0,0,1)] hover:-translate-y-1 relative" 
+                       style="--neon-glow-color: #ffd460;">
                         
-                        <div class="flex items-center gap-5 z-10">
-                            <div class="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-3xl group-hover:scale-110 group-hover:bg-white/20 group-hover:border-yellow-400/40 transition-all shadow-lg shrink-0">
-                                <i class="fas fa-bookmark text-yellow-400"></i>
+                        <div class="flex items-center gap-5 z-10 w-full md:w-auto">
+                            <div class="w-16 h-16 bg-[#090212] border-2 border-yellow-400 rounded-2xl flex items-center justify-center text-yellow-400 text-3xl shadow-[4px_4px_0_rgba(0,0,0,1)] group-hover:scale-110 transition-transform shrink-0">
+                                <i class="fas fa-bookmark"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-mono text-cyan-300 uppercase tracking-widest block mb-1">Notion Workspace</span>
-                                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-cyan-300 transition-colors">Other things i do</h3>
-                                <p class="text-sm text-gray-300 font-light mt-1">Eksplorasi proyek sampingan, catatan riset, dokumentasi studi, dan eksperimen kreatif lainnya di Notion.</p>
+                                <span class="text-xs font-mono text-yellow-400 uppercase tracking-widest block mb-1">Notion Workspace</span>
+                                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-yellow-400 transition-colors drop-shadow-[2px_2px_0_rgba(0,0,0,1)]">Other things i do</h3>
+                                <p class="text-sm text-gray-300 font-sans mt-2">Eksplorasi proyek sampingan, catatan riset, dokumentasi studi, dan eksperimen kreatif lainnya di Notion.</p>
                             </div>
                         </div>
 
-                        <div class="z-10 shrink-0">
-                            <span class="px-6 py-3 rounded-full font-mono text-xs sm:text-sm tracking-wider uppercase inline-flex items-center gap-2.5 border border-yellow-400/40 bg-yellow-400/10 text-cyan-300 font-semibold group-hover:bg-yellow-400 group-hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(0,240,255,0.2)]">
+                        <div class="z-10 shrink-0 w-full md:w-auto text-right md:text-left mt-4 md:mt-0">
+                            <span class="px-6 py-3 font-mono text-xs sm:text-sm tracking-wider uppercase inline-flex items-center justify-center gap-2.5 border-2 border-yellow-400 bg-[#090212] text-yellow-400 font-semibold group-hover:bg-yellow-400 group-hover:text-black transition-all duration-300 shadow-[6px_6px_0_rgba(0,0,0,1)] group-hover:shadow-[4px_4px_0_rgba(0,0,0,1)]">
                                 <span>Kunjungi Notion</span>
                                 <i class="fas fa-external-link-alt text-xs"></i>
                             </span>
@@ -247,7 +347,7 @@
     </footer>
 
     <!-- ✨ PROJECT DETAIL MODAL WITH 3-IMAGE CAROUSEL & AUTO-SLIDE ✨ -->
-    <div id="project-detail-modal" class="hidden fixed inset-0 z-[60] flex items-center justify-center p-4 gemini-modal-overlay">
+    <div id="project-detail-modal" class="fixed inset-0 z-[60] flex items-center justify-center p-4 gemini-modal-overlay">
         <div class="glass-panel w-full max-w-4xl max-h-[92vh] flex flex-col relative overflow-hidden">
             <button id="close-detail-modal-btn" class="absolute top-4 right-4 z-50 w-10 h-10 bg-black/60 hover:bg-black/90 border border-white/20 rounded-full text-white flex items-center justify-center backdrop-blur-md shadow-lg transition-all">
                 <i class="fas fa-times"></i>
@@ -268,446 +368,219 @@
                     
                     <!-- Indicator Dots -->
                     <div id="slider-dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-2"></div>
-                    
-                    <!-- Counter Badge -->
-                    <div id="slider-counter" class="absolute top-4 left-4 z-20 text-xs text-white/80 font-mono bg-black/50 border border-white/15 backdrop-blur-md px-3 py-1 rounded-full">
-                        1 / 1
-                    </div>
                 </div>
 
-                <!-- Text Details Area -->
-                <div class="p-6 sm:p-8 bg-[#07070a]/95 backdrop-blur-xl border-t border-white/10 relative z-10">
-                    <div class="flex justify-between items-start mb-4">
-                        <h2 id="detail-modal-title" class="font-serif text-2xl sm:text-3xl text-white font-bold"></h2>
-                        <span id="detail-modal-year" class="font-mono text-xs text-white/80 border border-white/20 bg-white/5 px-3 py-1 rounded-full shrink-0"></span>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <!-- Modal Content Details -->
+                <div class="p-6 sm:p-10 bg-gradient-to-b from-[#090212] to-[#140728] relative">
+                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 mb-6">
                         <div>
-                            <h4 class="text-xs font-mono text-white/50 uppercase mb-2">Kategori Proyek</h4>
+                            <span id="detail-modal-year" class="text-orange-400 font-mono text-xs sm:text-sm tracking-widest uppercase mb-2 block"></span>
+                            <h3 id="detail-modal-title" class="font-serif text-3xl sm:text-4xl text-white font-bold leading-tight"></h3>
+                        </div>
+                        <div class="flex gap-3 bg-white/5 border border-white/10 rounded-full px-4 py-2">
+                            <span class="text-white/60 text-xs font-mono uppercase tracking-wider">Slide</span>
+                            <span id="slider-counter" class="text-orange-400 text-xs font-mono font-bold">1 / 3</span>
+                        </div>
+                    </div>
+
+                    <p id="detail-modal-desc" class="text-gray-300 text-sm sm:text-base leading-relaxed font-light mb-8 max-w-3xl"></p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/10 pt-8">
+                        <div>
+                            <h4 class="text-white/60 text-xs font-mono uppercase tracking-widest mb-3 flex items-center gap-2">
+                                <i class="fas fa-tag text-orange-400"></i> Kategori
+                            </h4>
                             <div id="detail-modal-categories" class="flex flex-wrap gap-2"></div>
                         </div>
                         <div>
-                            <h4 class="text-xs font-mono text-white/50 uppercase mb-2">Tools & Software</h4>
+                            <h4 class="text-white/60 text-xs font-mono uppercase tracking-widest mb-3 flex items-center gap-2">
+                                <i class="fas fa-wrench text-orange-400"></i> Tools & Tech
+                            </h4>
                             <div id="detail-modal-tools" class="flex flex-wrap gap-2"></div>
                         </div>
-                    </div>
-                    <div>
-                        <h4 class="text-xs font-mono text-white/50 uppercase mb-2">Deskripsi Proyek</h4>
-                        <p id="detail-modal-desc" class="text-gray-300 text-sm sm:text-base leading-relaxed font-light"></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- UI INTERACTION SCRIPTS -->
-    <script>
-        // ===== ULTRA-FUTURISTIC PRELOADER ENGINE (SMOOTH PACED ANIMATION) =====
-        const preloader = document.getElementById('preloader');
-        const preloaderBar = document.getElementById('preloader-bar');
-        const preloaderPercent = document.getElementById('preloader-percent');
-        const preloaderStatus = document.getElementById('preloader-status');
-
-        let progress = 0;
-        const statusTexts = ['INITIALIZING SYSTEM...', 'LOADING ASSETS...', 'PREPARING VISUALS...', 'WELCOME'];
-
-        const progressInterval = setInterval(() => {
-            // Smooth pacing step ~2.5s total duration
-            progress += Math.floor(Math.random() * 5) + 2;
-            if (progress > 100) progress = 100;
-
-            if (preloaderBar) preloaderBar.style.width = `${progress}%`;
-            if (preloaderPercent) preloaderPercent.textContent = `${progress}%`;
-            
-            if (progress < 30) {
-                if (preloaderStatus) preloaderStatus.textContent = statusTexts[0];
-            } else if (progress < 65) {
-                if (preloaderStatus) preloaderStatus.textContent = statusTexts[1];
-            } else if (progress < 92) {
-                if (preloaderStatus) preloaderStatus.textContent = statusTexts[2];
-            } else {
-                if (preloaderStatus) preloaderStatus.textContent = statusTexts[3];
-            }
-
-            if (progress >= 100) {
-                clearInterval(progressInterval);
-                setTimeout(() => {
-                    if (preloader) preloader.classList.add('loaded');
-                    // Trigger Initial Page Content Entrance Animation
-                    document.querySelectorAll('.initial-reveal').forEach(el => {
-                        el.classList.add('entered');
-                    });
-                }, 300);
-            }
-        }, 55);
-
-        // ===== STICKY HEADER SCROLL ENGINE =====
-        const headerEl = document.getElementById('header');
-        function handleHeaderScroll() {
-            if (!headerEl) return;
-            if (window.scrollY > 30) {
-                headerEl.classList.add('scrolled');
-            } else {
-                headerEl.classList.remove('scrolled');
-            }
-        }
-        window.addEventListener('scroll', handleHeaderScroll, { passive: true });
-        handleHeaderScroll();
-
-        // ===== FUTURISTIC SCROLL REVEAL INTERSECTION OBSERVER =====
-        const revealElements = document.querySelectorAll('.reveal-on-scroll');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                }
-            });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // 3-IMAGE CAROUSEL & AUTO-SLIDE MODAL LOGIC
-        let currentSlide = 0;
-        let slideImages = [];
-        let autoSlideInterval = null;
-
-        function updateSlider() {
-            const track = document.getElementById('modal-slides-track');
-            if (!track) return;
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-            const counter = document.getElementById('slider-counter');
-            if (counter) counter.textContent = `${currentSlide + 1} / ${slideImages.length}`;
-
-            document.querySelectorAll('.slider-dot').forEach((dot, idx) => {
-                if (idx === currentSlide) {
-                    dot.classList.add('bg-white', 'w-6');
-                    dot.classList.remove('bg-white/40', 'w-2');
-                } else {
-                    dot.classList.remove('bg-white', 'w-6');
-                    dot.classList.add('bg-white/40', 'w-2');
-                }
-            });
-        }
-
-        function startAutoSlide() {
-            stopAutoSlide();
-            if (slideImages.length > 1) {
-                autoSlideInterval = setInterval(() => {
-                    currentSlide = (currentSlide + 1) % slideImages.length;
-                    updateSlider();
-                }, 3500); // Auto slide every 3.5 seconds
-            }
-        }
-
-        function stopAutoSlide() {
-            if (autoSlideInterval) {
-                clearInterval(autoSlideInterval);
-                autoSlideInterval = null;
-            }
-        }
-
-        const modal = document.getElementById('project-detail-modal');
-        document.querySelectorAll('.project-trigger').forEach(card => {
-            card.addEventListener('click', () => {
-                const title = card.getAttribute('data-title') || '';
-                const year = card.getAttribute('data-year') || '';
-                const desc = card.getAttribute('data-desc') || '';
-                const categoryStr = card.getAttribute('data-category') || '';
-                const toolsStr = card.getAttribute('data-tools') || '';
-                const imgsAttr = card.getAttribute('data-imgs') || card.getAttribute('data-img') || '';
-                
-                slideImages = imgsAttr.split(',').map(s => s.trim()).filter(Boolean);
-                currentSlide = 0;
-
-                document.getElementById('detail-modal-title').textContent = title;
-                document.getElementById('detail-modal-year').textContent = year;
-                document.getElementById('detail-modal-desc').textContent = desc;
-
-                const catContainer = document.getElementById('detail-modal-categories');
-                catContainer.innerHTML = categoryStr.split(',').map(c => 
-                    `<span class="px-2.5 py-1 bg-white/10 border border-white/15 rounded-full text-xs text-white/80 font-mono">${c.trim()}</span>`
-                ).join('');
-
-                const toolsContainer = document.getElementById('detail-modal-tools');
-                toolsContainer.innerHTML = toolsStr.split(',').map(t => 
-                    `<span class="px-2.5 py-1 bg-white/10 border border-white/15 rounded-full text-xs text-white/80 font-mono">${t.trim()}</span>`
-                ).join('');
-
-                const track = document.getElementById('modal-slides-track');
-                track.innerHTML = slideImages.map(img => 
-                    `<img src="${img}" class="w-full h-full object-cover flex-shrink-0" alt="${title}">`
-                ).join('');
-
-                const dotsContainer = document.getElementById('slider-dots');
-                dotsContainer.innerHTML = slideImages.map((_, idx) => 
-                    `<button class="slider-dot h-2 rounded-full transition-all duration-300 ${idx === 0 ? 'bg-white w-6' : 'bg-white/40 w-2'}" data-index="${idx}"></button>`
-                ).join('');
-
-                document.querySelectorAll('.slider-dot').forEach(dot => {
-                    dot.addEventListener('click', (e) => {
-                        currentSlide = parseInt(e.target.getAttribute('data-index'));
-                        updateSlider();
-                        startAutoSlide();
-                    });
-                });
-
-                updateSlider();
-                modal.classList.remove('hidden');
-                startAutoSlide();
-            });
-        });
-
-        document.getElementById('slider-prev-btn')?.addEventListener('click', () => {
-            if (slideImages.length <= 1) return;
-            currentSlide = (currentSlide - 1 + slideImages.length) % slideImages.length;
-            updateSlider();
-            startAutoSlide();
-        });
-
-        document.getElementById('slider-next-btn')?.addEventListener('click', () => {
-            if (slideImages.length <= 1) return;
-            currentSlide = (currentSlide + 1) % slideImages.length;
-            updateSlider();
-            startAutoSlide();
-                <!-- Text Details Area -->
-                <div class="p-6 sm:p-8 bg-[#07070a]/95 backdrop-blur-xl border-t border-white/10 relative z-10">
-                    <div class="flex justify-between items-start mb-4">
-                        <h2 id="detail-modal-title" class="font-serif text-2xl sm:text-3xl text-white font-bold"></h2>
-                        <span id="detail-modal-year" class="font-mono text-xs text-white/80 border border-white/20 bg-white/5 px-3 py-1 rounded-full shrink-0"></span>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                        <div>
-                            <h4 class="text-xs font-mono text-white/50 uppercase mb-2">Kategori Proyek</h4>
-                            <div id="detail-modal-categories" class="flex flex-wrap gap-2"></div>
-                        </div>
-                        <div>
-                            <h4 class="text-xs font-mono text-white/50 uppercase mb-2">Tools & Software</h4>
-                            <div id="detail-modal-tools" class="flex flex-wrap gap-2"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="text-xs font-mono text-white/50 uppercase mb-2">Deskripsi Proyek</h4>
-                        <p id="detail-modal-desc" class="text-gray-300 text-sm sm:text-base leading-relaxed font-light"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- UI INTERACTION SCRIPTS -->
-    <script>
-        // ===== ULTRA-FUTURISTIC PRELOADER ENGINE (SMOOTH PACED ANIMATION) =====
-        const preloader = document.getElementById('preloader');
-        const preloaderBar = document.getElementById('preloader-bar');
-        const preloaderPercent = document.getElementById('preloader-percent');
-        const preloaderStatus = document.getElementById('preloader-status');
-
-        let progress = 0;
-        const statusTexts = ['INITIALIZING SYSTEM...', 'LOADING ASSETS...', 'PREPARING VISUALS...', 'WELCOME'];
-
-        const progressInterval = setInterval(() => {
-            // Smooth pacing step ~2.5s total duration
-            progress += Math.floor(Math.random() * 5) + 2;
-            if (progress > 100) progress = 100;
-
-            if (preloaderBar) preloaderBar.style.width = `${progress}%`;
-            if (preloaderPercent) preloaderPercent.textContent = `${progress}%`;
-            
-            if (progress < 30) {
-                if (preloaderStatus) preloaderStatus.textContent = statusTexts[0];
-            } else if (progress < 65) {
-                if (preloaderStatus) preloaderStatus.textContent = statusTexts[1];
-            } else if (progress < 92) {
-                if (preloaderStatus) preloaderStatus.textContent = statusTexts[2];
-            } else {
-                if (preloaderStatus) preloaderStatus.textContent = statusTexts[3];
-            }
-
-            if (progress >= 100) {
-                clearInterval(progressInterval);
-                setTimeout(() => {
-                    if (preloader) preloader.classList.add('loaded');
-                    // Trigger Initial Page Content Entrance Animation
-                    document.querySelectorAll('.initial-reveal').forEach(el => {
-                        el.classList.add('entered');
-                    });
-                }, 300);
-            }
-        }, 55);
-
-        // ===== STICKY HEADER SCROLL ENGINE =====
-        const headerEl = document.getElementById('header');
-        function handleHeaderScroll() {
-            if (!headerEl) return;
-            if (window.scrollY > 30) {
-                headerEl.classList.add('scrolled');
-            } else {
-                headerEl.classList.remove('scrolled');
-            }
-        }
-        window.addEventListener('scroll', handleHeaderScroll, { passive: true });
-        handleHeaderScroll();
-
-        // ===== FUTURISTIC SCROLL REVEAL INTERSECTION OBSERVER =====
-        const revealElements = document.querySelectorAll('.reveal-on-scroll');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                }
-            });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // 3-IMAGE CAROUSEL & AUTO-SLIDE MODAL LOGIC
-        let currentSlide = 0;
-        let slideImages = [];
-        let autoSlideInterval = null;
-
-        function updateSlider() {
-            const track = document.getElementById('modal-slides-track');
-            if (!track) return;
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-            const counter = document.getElementById('slider-counter');
-            if (counter) counter.textContent = `${currentSlide + 1} / ${slideImages.length}`;
-
-            document.querySelectorAll('.slider-dot').forEach((dot, idx) => {
-                if (idx === currentSlide) {
-                    dot.classList.add('bg-white', 'w-6');
-                    dot.classList.remove('bg-white/40', 'w-2');
-                } else {
-                    dot.classList.remove('bg-white', 'w-6');
-                    dot.classList.add('bg-white/40', 'w-2');
-                }
-            });
-        }
-
-        function startAutoSlide() {
-            stopAutoSlide();
-            if (slideImages.length > 1) {
-                autoSlideInterval = setInterval(() => {
-                    currentSlide = (currentSlide + 1) % slideImages.length;
-                    updateSlider();
-                }, 3500); // Auto slide every 3.5 seconds
-            }
-        }
-
-        function stopAutoSlide() {
-            if (autoSlideInterval) {
-                clearInterval(autoSlideInterval);
-                autoSlideInterval = null;
-            }
-        }
-
-        const modal = document.getElementById('project-detail-modal');
-        document.querySelectorAll('.project-trigger').forEach(card => {
-            card.addEventListener('click', () => {
-                const title = card.getAttribute('data-title') || '';
-                const year = card.getAttribute('data-year') || '';
-                const desc = card.getAttribute('data-desc') || '';
-                const categoryStr = card.getAttribute('data-category') || '';
-                const toolsStr = card.getAttribute('data-tools') || '';
-                const imgsAttr = card.getAttribute('data-imgs') || card.getAttribute('data-img') || '';
-                
-                slideImages = imgsAttr.split(',').map(s => s.trim()).filter(Boolean);
-                currentSlide = 0;
-
-                document.getElementById('detail-modal-title').textContent = title;
-                document.getElementById('detail-modal-year').textContent = year;
-                document.getElementById('detail-modal-desc').textContent = desc;
-
-                const catContainer = document.getElementById('detail-modal-categories');
-                catContainer.innerHTML = categoryStr.split(',').map(c => 
-                    `<span class="px-2.5 py-1 bg-white/10 border border-white/15 rounded-full text-xs text-white/80 font-mono">${c.trim()}</span>`
-                ).join('');
-
-                const toolsContainer = document.getElementById('detail-modal-tools');
-                toolsContainer.innerHTML = toolsStr.split(',').map(t => 
-                    `<span class="px-2.5 py-1 bg-white/10 border border-white/15 rounded-full text-xs text-white/80 font-mono">${t.trim()}</span>`
-                ).join('');
-
-                const track = document.getElementById('modal-slides-track');
-                track.innerHTML = slideImages.map(img => 
-                    `<img src="${img}" class="w-full h-full object-cover flex-shrink-0" alt="${title}">`
-                ).join('');
-
-                const dotsContainer = document.getElementById('slider-dots');
-                dotsContainer.innerHTML = slideImages.map((_, idx) => 
-                    `<button class="slider-dot h-2 rounded-full transition-all duration-300 ${idx === 0 ? 'bg-white w-6' : 'bg-white/40 w-2'}" data-index="${idx}"></button>`
-                ).join('');
-
-                document.querySelectorAll('.slider-dot').forEach(dot => {
-                    dot.addEventListener('click', (e) => {
-                        currentSlide = parseInt(e.target.getAttribute('data-index'));
-                        updateSlider();
-                        startAutoSlide();
-                    });
-                });
-
-                updateSlider();
-                modal.classList.remove('hidden');
-                startAutoSlide();
-            });
-        });
-
-        document.getElementById('slider-prev-btn')?.addEventListener('click', () => {
-            if (slideImages.length <= 1) return;
-            currentSlide = (currentSlide - 1 + slideImages.length) % slideImages.length;
-            updateSlider();
-            startAutoSlide();
-        });
-
-        document.getElementById('slider-next-btn')?.addEventListener('click', () => {
-            if (slideImages.length <= 1) return;
-            currentSlide = (currentSlide + 1) % slideImages.length;
-            updateSlider();
-            startAutoSlide();
-        });
-
-        document.getElementById('close-detail-modal-btn')?.addEventListener('click', () => {
-            modal.classList.add('hidden');
-            stopAutoSlide();
-        });
-
-    </script>
-
-    <!-- PIXEL DISSOLVE PAGE TRANSITION SCRIPT -->
+    <!-- ===== JS SCRIPTS ===== -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Create overlay
-            const overlay = document.createElement('div');
-            overlay.className = 'pixel-transition-overlay';
-            overlay.id = 'pixel-transition-overlay';
-            
-            // Add 225 blocks (15x15)
-            for(let i=0; i<225; i++) {
-                const block = document.createElement('div');
-                block.className = 'pixel-block';
-                overlay.appendChild(block);
-            }
-            document.body.appendChild(overlay);
+            // Langsung memunculkan elemen initial-reveal tanpa preloader
+            setTimeout(() => {
+                document.querySelectorAll('.initial-reveal').forEach(el => {
+                    el.classList.add('entered');
+                });
+            }, 100);
 
-            // Intercept link clicks for html pages
-            document.querySelectorAll('a[href]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    // Only intercept internal html links (e.g., index.html)
-                    // and not hash links
-                    if(href && href.includes('.html') && !href.startsWith('http') && this.target !== '_blank' && !href.startsWith('#')) {
-                        e.preventDefault();
-                        // Reshuffle delays for new dissolve in
-                        overlay.querySelectorAll('.pixel-block').forEach(b => {
-                            b.style.transitionDelay = (Math.random() * 0.3) + 's';
-                        });
-                        overlay.classList.add('active');
-                        setTimeout(() => {
-                            window.location.href = href;
-                        }, 750); // wait for animation
+            // ===== STICKY HEADER SCROLL ENGINE =====
+            const headerEl = document.getElementById('header');
+            function handleHeaderScroll() {
+                if (!headerEl) return;
+                if (window.scrollY > 30) {
+                    headerEl.classList.add('scrolled');
+                } else {
+                    headerEl.classList.remove('scrolled');
+                }
+            }
+            window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+            handleHeaderScroll();
+
+            // ===== FUTURISTIC SCROLL REVEAL INTERSECTION OBSERVER =====
+            const revealElements = document.querySelectorAll('.reveal-on-scroll');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
                     }
                 });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // 3-IMAGE CAROUSEL & AUTO-SLIDE MODAL LOGIC
+            let currentSlide = 0;
+            let slideImages = [];
+            let autoSlideInterval = null;
+
+            function updateSlider() {
+                const track = document.getElementById('modal-slides-track');
+                if (!track) return;
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+                const counter = document.getElementById('slider-counter');
+                if (counter) counter.textContent = `${currentSlide + 1} / ${slideImages.length}`;
+
+                document.querySelectorAll('.slider-dot').forEach((dot, idx) => {
+                    if (idx === currentSlide) {
+                        dot.classList.add('bg-white', 'w-6');
+                        dot.classList.remove('bg-white/40', 'w-2');
+                    } else {
+                        dot.classList.remove('bg-white', 'w-6');
+                        dot.classList.add('bg-white/40', 'w-2');
+                    }
+                });
+            }
+
+            function startAutoSlide() {
+                stopAutoSlide();
+                if (slideImages.length > 1) {
+                    autoSlideInterval = setInterval(() => {
+                        currentSlide = (currentSlide + 1) % slideImages.length;
+                        updateSlider();
+                    }, 3500); // Auto slide every 3.5 seconds
+                }
+            }
+
+            function stopAutoSlide() {
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = null;
+                }
+            }
+
+            const modal = document.getElementById('project-detail-modal');
+            
+            // EVENT DELEGATION UNTUK MEMASTIKAN KLIK SELALU TERTANGKAP
+            document.body.addEventListener('click', (e) => {
+                const card = e.target.closest('.project-trigger');
+                if (!card) return;
+
+                console.log("PROJECT CARD CLICKED!", card);
+
+                const title = card.getAttribute('data-title') || '';
+                const year = card.getAttribute('data-year') || '';
+                const desc = card.getAttribute('data-desc') || '';
+                const categoryStr = card.getAttribute('data-category') || '';
+                const toolsStr = card.getAttribute('data-tools') || '';
+                const imgsAttr = card.getAttribute('data-imgs') || card.getAttribute('data-img') || '';
+                
+                slideImages = imgsAttr.split(',').map(s => s.trim()).filter(Boolean);
+                currentSlide = 0;
+
+                document.getElementById('detail-modal-title').textContent = title;
+                document.getElementById('detail-modal-year').textContent = year;
+                document.getElementById('detail-modal-desc').textContent = desc;
+
+                const catContainer = document.getElementById('detail-modal-categories');
+                catContainer.innerHTML = categoryStr.split(',').map(c => 
+                    `<span class="px-2.5 py-1 bg-white/10 border border-white/15 rounded-full text-xs text-white/80 font-mono">${c.trim()}</span>`
+                ).join('');
+
+                const toolsContainer = document.getElementById('detail-modal-tools');
+                toolsContainer.innerHTML = toolsStr.split(',').map(t => 
+                    `<span class="px-2.5 py-1 bg-white/10 border border-white/15 rounded-full text-xs text-white/80 font-mono">${t.trim()}</span>`
+                ).join('');
+
+                const track = document.getElementById('modal-slides-track');
+                if (track) {
+                    track.innerHTML = slideImages.map(img => 
+                        `<img src="${img}" class="w-full h-full object-cover flex-shrink-0" alt="${title}">`
+                    ).join('');
+                }
+
+                const dotsContainer = document.getElementById('slider-dots');
+                if (dotsContainer) {
+                    dotsContainer.innerHTML = slideImages.map((_, idx) => 
+                        `<button class="slider-dot h-2 rounded-full transition-all duration-300 ${idx === 0 ? 'bg-white w-6' : 'bg-white/40 w-2'}" data-index="${idx}"></button>`
+                    ).join('');
+
+                    document.querySelectorAll('.slider-dot').forEach(dot => {
+                        dot.addEventListener('click', (ev) => {
+                            currentSlide = parseInt(ev.target.getAttribute('data-index'));
+                            updateSlider();
+                            startAutoSlide();
+                        });
+                    });
+                }
+
+                updateSlider();
+                if (modal) {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+                startAutoSlide();
+            });
+
+            document.getElementById('slider-prev-btn')?.addEventListener('click', () => {
+                if (slideImages.length <= 1) return;
+                currentSlide = (currentSlide - 1 + slideImages.length) % slideImages.length;
+                updateSlider();
+                startAutoSlide();
+            });
+
+            document.getElementById('slider-next-btn')?.addEventListener('click', () => {
+                if (slideImages.length <= 1) return;
+                currentSlide = (currentSlide + 1) % slideImages.length;
+                updateSlider();
+                startAutoSlide();
+            });
+
+            document.getElementById('close-detail-modal-btn')?.addEventListener('click', () => {
+                if (modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+                stopAutoSlide();
+            });
+
+            // Close on outside click
+            modal?.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    stopAutoSlide();
+                }
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal?.classList.contains('active')) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    stopAutoSlide();
+                }
             });
         });
     </script>

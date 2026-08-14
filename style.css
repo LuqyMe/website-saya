@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
 
-* { font-family: 'Pixelify Sans', sans-serif !important; }
-html { scroll-behavior: smooth; font-family: 'Pixelify Sans', sans-serif !important; }
-body { font-family: 'Pixelify Sans', sans-serif !important; }
+* { font-family: 'Pixelify Sans', sans-serif; }
+html { scroll-behavior: smooth; font-family: 'Pixelify Sans', sans-serif; }
+body { font-family: 'Pixelify Sans', sans-serif; }
 .font-serif, .font-sans, .font-pixel, .font-mono { font-family: 'Pixelify Sans', sans-serif !important; }
 /* Custom Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
@@ -221,8 +221,8 @@ header {
     -webkit-backdrop-filter: blur(14px) saturate(150%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
 }
 
 .nav-link-glow {
@@ -244,14 +244,14 @@ header {
 }
 
 /* ===== PIXEL SCROLL REVEAL (BLOCKY TRANSITION) ===== */
-.reveal-on-scroll {
+.reveal-on-scroll, .about-reveal {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s steps(5, end), transform 0.6s steps(5, end);
     will-change: transform, opacity;
 }
 
-.reveal-on-scroll.revealed {
+.reveal-on-scroll.revealed, .about-reveal.revealed {
     opacity: 1;
     transform: translateY(0);
 }
@@ -492,50 +492,7 @@ body {
     }
 }
 
-/* ========== PIXEL BORDER FRAME ANIMATION ========== */
-.pixel-frame {
-    position: relative;
-    padding: 2rem 4rem;
-    border: 4px solid var(--neon-glow-color, #ff6f61);
-    box-shadow:
-        4px 4px 0 var(--neon-glow-color, #ff6f61) inset,
-        -4px -4px 0 var(--neon-glow-color, #ff6f61) inset,
-        8px 8px 0 rgba(0,0,0,0.5);
-    background: rgba(0, 0, 0, 0.4);
-    animation: pixelFramePulse 1.5s infinite alternate steps(2);
-}
-
-.pixel-frame::before {
-    content: "";
-    position: absolute;
-    top: -8px; bottom: -8px; left: 16px; right: 16px;
-    border-top: 4px solid var(--neon-glow-color, #ff6f61);
-    border-bottom: 4px solid var(--neon-glow-color, #ff6f61);
-    animation: pixelFrameFlicker 0.8s infinite steps(2);
-    pointer-events: none;
-}
-
-.pixel-frame::after {
-    content: "";
-    position: absolute;
-    top: 16px; bottom: 16px; left: -8px; right: -8px;
-    border-left: 4px solid var(--neon-glow-color, #ff6f61);
-    border-right: 4px solid var(--neon-glow-color, #ff6f61);
-    animation: pixelFrameFlicker 0.8s infinite steps(2) reverse;
-    pointer-events: none;
-}
-
-@keyframes pixelFramePulse {
-    0% {
-        border-color: var(--neon-glow-color, #ff6f61);
-        box-shadow: 4px 4px 0 var(--neon-glow-color) inset, -4px -4px 0 var(--neon-glow-color) inset, 8px 8px 0 rgba(0,0,0,0.5);
-    }
-    100% {
-        border-color: #fff;
-        box-shadow: 6px 6px 0 var(--neon-glow-color) inset, -6px -6px 0 var(--neon-glow-color) inset, 12px 12px 0 rgba(0,0,0,0.5);
-    }
-}
-}
+/* Duplicate block removed */
 
 .portfolio-item-card {
     transition: opacity 0.35s ease, transform 0.35s ease;
@@ -629,65 +586,7 @@ body {
     --neon-glow-color: #ff6f61; /* Default Sunset Coral */
 }
 
-/* ===== REAL CYBER NEON TEXT & FLICKER ANIMATIONS ===== */
-.neon-text-dynamic {
-    color: #ffffff;
-    text-shadow:
-        0 0 5px #fff,
-        0 0 10px #fff,
-        0 0 20px var(--neon-glow-color),
-        0 0 40px var(--neon-glow-color),
-        0 0 80px var(--neon-glow-color),
-        0 0 100px var(--neon-glow-color);
-}
-
-.neon-pulse {
-    animation: neonPulse 3s infinite alternate ease-in-out;
-}
-
-@keyframes neonPulse {
-    0%, 100% {
-        opacity: 1;
-        text-shadow: 0 0 8px var(--neon-glow-color);
-    }
-    50% {
-        opacity: 0.8;
-        text-shadow: 0 0 15px var(--neon-glow-color);
-    }
-}
-
-.neon-off {
-    animation: neonTurnOff 0.35s forwards;
-}
-
-@keyframes neonTurnOff {
-    0% { opacity: 1; text-shadow: 0 0 8px var(--neon-glow-color); }
-    25% { opacity: 0.2; text-shadow: none; }
-    40% { opacity: 0.8; text-shadow: 0 0 5px #fff; }
-    55% { opacity: 0.1; text-shadow: none; }
-    70% { opacity: 0.6; text-shadow: 0 0 12px var(--neon-glow-color); }
-    100% { opacity: 0; text-shadow: none; }
-}
-
-.neon-on {
-    animation: neonTurnOn 0.55s forwards;
-}
-
-@keyframes neonTurnOn {
-    0% { opacity: 0; text-shadow: none; }
-    15% { opacity: 0.85; text-shadow: 0 0 5px var(--neon-glow-color); }
-    30% { opacity: 0.15; text-shadow: none; }
-    45% { opacity: 1; text-shadow: 0 0 10px var(--neon-glow-color); }
-    60% { opacity: 0.35; text-shadow: 0 0 3px #fff; }
-    75% { opacity: 1; text-shadow: 0 0 15px var(--neon-glow-color); }
-    90% { opacity: 0.85; text-shadow: 0 0 8px var(--neon-glow-color); }
-    100% {
-        opacity: 1;
-        text-shadow: 0 0 8px var(--neon-glow-color);
-    }
-}
-
-/* ========== PIXEL BORDER FRAME ANIMATION ========== */
+/* ========== PIXEL BORDER FRAME ========== */
 .pixel-frame {
     position: relative;
     padding: 2rem 4rem;
@@ -695,44 +594,63 @@ body {
     box-shadow:
         4px 4px 0 var(--neon-glow-color, #ff6f61) inset,
         -4px -4px 0 var(--neon-glow-color, #ff6f61) inset,
-        8px 8px 0 rgba(0,0,0,0.5);
+        8px 8px 0 #000;
     background: rgba(0, 0, 0, 0.4);
-    animation: pixelFramePulse 1.5s infinite alternate steps(2);
 }
 
-.pixel-frame::before {
-    content: "";
-    position: absolute;
-    top: -8px; bottom: -8px; left: 16px; right: 16px;
-    border-top: 4px solid var(--neon-glow-color, #ff6f61);
-    border-bottom: 4px solid var(--neon-glow-color, #ff6f61);
-    animation: pixelFrameFlicker 0.8s infinite steps(2);
-    pointer-events: none;
+/* ========== JRPG FRAME ========== */
+.jrpg-frame {
+    border: 4px solid var(--neon-glow-color, #ff6f61);
+    box-shadow:
+        4px 4px 0 var(--neon-glow-color, #ff6f61) inset,
+        -4px -4px 0 var(--neon-glow-color, #ff6f61) inset,
+        8px 8px 0 #000;
 }
 
-.pixel-frame::after {
-    content: "";
-    position: absolute;
-    top: 16px; bottom: 16px; left: -8px; right: -8px;
-    border-left: 4px solid var(--neon-glow-color, #ff6f61);
-    border-right: 4px solid var(--neon-glow-color, #ff6f61);
-    animation: pixelFrameFlicker 0.8s infinite steps(2) reverse;
-    pointer-events: none;
+/* ========== ABOUT SECTION REVEAL ANIMATION ========== */
+.about-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    /* Menggunakan steps(8) untuk transisi patah-patah pixel dissolve */
+    transition: opacity 0.8s steps(8), transform 0.8s steps(8);
+}
+.about-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-@keyframes pixelFramePulse {
-    0% {
-        border-color: var(--neon-glow-color, #ff6f61);
-        box-shadow: 4px 4px 0 var(--neon-glow-color) inset, -4px -4px 0 var(--neon-glow-color) inset, 8px 8px 0 rgba(0,0,0,0.5);
-    }
-    100% {
-        border-color: #fff;
-        box-shadow: 6px 6px 0 var(--neon-glow-color) inset, -6px -6px 0 var(--neon-glow-color) inset, 12px 12px 0 rgba(0,0,0,0.5);
-    }
+/* ========== HORIZONTAL SCROLL ITEM REVEAL (SMOOTH) ========== */
+.scroll-item-reveal {
+    opacity: 0;
+    transform: translateX(100px) scale(0.95);
+    /* Transisi smooth menggunakan cubic-bezier */
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
-@keyframes pixelFrameFlicker {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+.scroll-item-reveal.is-visible {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+.scroll-item-reveal.is-exiting-left {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.95);
+}
+
+/* ========== LOCAL PIXEL DISSOLVE TEXT ANIMATION ========== */
+.text-pixel-block {
+    background-color: #12061e; /* Fallback */
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.25s steps(2), opacity 0.25s steps(2);
+    /* Make blocks slightly overflow their grid cells to prevent gaps */
+    width: 110%;
+    height: 110%;
+}
+.text-pixel-block.active {
+    transform: scale(1.05);
+    opacity: 1;
 }
 
 /* ========== PURE CSS PARALLAX PIXEL CITYSCAPE ========== */

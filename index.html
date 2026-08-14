@@ -37,7 +37,7 @@
     </div>
 
     <!-- STICKY FIXED NAVBAR -->
-    <header id="header" class="fixed top-0 left-0 w-full z-50 py-5 sm:py-6 px-6 sm:px-12 transition-all duration-300 initial-reveal">
+    <header id="header" class="fixed top-0 left-0 w-full z-50 py-2 px-6 sm:px-12 transition-all duration-300 initial-reveal">
         <div class="container mx-auto max-w-6xl flex justify-between items-center">
             <!-- Logo Badge -->
             <a href="#home" class="flex items-center gap-2.5 font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tighter hover:opacity-80 transition-opacity">
@@ -47,16 +47,16 @@
             
             <!-- Dynamic Scrollspy Nav Links -->
             <div class="flex items-center space-x-2 sm:space-x-3 text-white/90 text-xs sm:text-sm font-mono tracking-wide">
-                <a id="nav-link-about" href="#about" class="px-4 py-2 rounded-full nav-link-glow border border-transparent hover:text-orange-400">Tentang</a>
-                <a id="nav-link-karya" href="#portfolio" class="px-4 py-2 rounded-full nav-link-glow border border-transparent hover:text-orange-400">Karya</a>
-                <a id="nav-link-contact" href="#contact" class="px-4 py-2 rounded-full nav-link-glow border border-transparent hover:text-orange-400">Kontak</a>
+                <a id="nav-link-about" href="#about" class="px-3 py-1.5 rounded-full nav-link-glow border border-transparent hover:text-orange-400">Tentang</a>
+                <a id="nav-link-karya" href="#portfolio" class="px-3 py-1.5 rounded-full nav-link-glow border border-transparent hover:text-orange-400">Karya</a>
+                <a id="nav-link-contact" href="#contact" class="px-3 py-1.5 rounded-full nav-link-glow border border-transparent hover:text-orange-400">Kontak</a>
             </div>
         </div>
     </header>
 
     <main class="relative z-10">
         <!-- ===== HERO SECTION (MAIN PAGE: PURE CSS PIXEL CITYSCAPE PARALLAX) ===== -->
-        <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-36 pb-24 z-10 bg-[#2b0f54]">
+        <section id="home" class="min-h-screen flex items-center sticky top-0 overflow-hidden pt-36 pb-24 z-0 bg-[#2b0f54]">
             
             <!-- PURE CSS PIXEL CITYSCAPE BACKGROUND -->
             <div class="cityscape-container">
@@ -67,344 +67,322 @@
             </div>
 
             <div class="container mx-auto px-4 relative z-20 w-full max-w-none">
-                <div class="text-center flex flex-col items-center justify-center w-full">
+                <div id="hero-content-wrapper" class="text-center flex flex-col items-center justify-center w-full" style="--neon-glow-color: #ff6f61;">
 
-                    <!-- Striking Massive Cyber Headline with Neon Glow & Flicker Animation -->
-                    <div id="hero-pixel-frame" class="w-full initial-reveal delay-200 min-h-[1.25em] flex items-center justify-center relative px-4 py-8 sm:py-12 my-8 pixel-frame mx-auto max-w-[95%] sm:max-w-fit" style="--neon-glow-color: #ff6f61;">
-                        <h1 id="fade-headline-title" class="font-sans font-black uppercase text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8vw] xl:text-[9vw] tracking-tighter text-center text-white neon-text-dynamic neon-pulse leading-[0.9] m-0 p-0">
+                    <!-- Striking Massive Cyber Headline -->
+                    <div id="hero-pixel-frame" class="w-11/12 max-w-fit min-h-[1.25em] flex items-center justify-center relative px-8 py-8 my-8 pixel-frame mx-auto">
+                        <h1 id="fade-headline-title" class="font-sans font-black uppercase text-[8vw] sm:text-[7vw] md:text-[6vw] lg:text-[4rem] xl:text-[5rem] tracking-tighter text-center text-white leading-none m-0 p-0 whitespace-nowrap">
                             Programmer AR
                         </h1>
                     </div>
 
+                    <div class="mt-4 sm:mt-8">
+                        <a href="#portfolio" class="inline-flex items-center gap-3 px-8 py-3 lg:px-10 lg:py-4 bg-[#120524] border-[3px] font-pixel text-xs sm:text-sm text-white uppercase tracking-widest transition-all hover:-translate-y-1 hover:bg-white hover:text-black hover:border-white shadow-[6px_6px_0_#000] active:translate-y-[2px] active:translate-x-[2px] active:shadow-[2px_2px_0_#000]" style="border-color: var(--neon-glow-color);">
+                            <span class="animate-pulse">▶</span> View My Work
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- SECTION SEPARATOR BEAM -->
-        <div class="section-separator-beam reveal-on-scroll"></div>
+        <!-- CONTENT CURTAIN (SLIDES OVER HERO) -->
+        <div id="content-curtain" class="relative z-10 bg-[#090212] border-t-[8px] border-[#090212]">
 
-        <!-- ===== ABOUT SECTION (APPLE BENTO GRID STYLE) ===== -->
-        <section id="about" class="py-24 md:py-36 relative z-10">
-            <div class="container mx-auto px-6 max-w-6xl">
-                <div class="text-center mb-16 reveal-on-scroll">
-                    <span class="text-xs font-mono text-gray-400 uppercase tracking-widest block mb-2">Profile Overview</span>
-                    <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-bold tracking-tight">
-                        About <span class="text-white/50 font-light">Me</span>
-                    </h2>
-                </div>
 
-                <!-- Bento Grid Container -->
-                <div class="grid grid-cols-12 gap-6">
-                    
-                    <!-- BENTO 1: PORTRAIT PHOTO -->
-                    <div class="col-span-12 lg:col-span-4 glass-panel p-3 rounded-3xl relative overflow-hidden flex flex-col group min-h-[420px] reveal-on-scroll delay-100">
-                        <div class="relative w-full h-full min-h-[380px] rounded-2xl overflow-hidden border border-white/10">
-                            <img src="images/WhatsApp Image 2026-07-24 at 15.37.40.jpeg" onerror="this.src='https://placehold.co/400x500/1e1e24/FFFFFF?text=Khuluq'" alt="Profile Photo" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                        </div>
-                    </div>
-
-                    <!-- BENTO 2: MAIN BIO & SOFTWARE MASTERED WITH SPECIALIZATION TITLES -->
-                    <div class="col-span-12 lg:col-span-8 glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden flex flex-col justify-between reveal-on-scroll delay-200">
-                        <div>
-                            <!-- Full Name -->
-                            <h2 class="font-serif text-3xl sm:text-4xl text-white font-bold tracking-tight mb-6">M. AHSANIL KHULUQ</h2>
-
-                            <p class="text-gray-300 text-base sm:text-lg leading-relaxed font-light">
-                                <span class="text-white font-medium">Programmer AR dengan fondasi desain.</span> Perjalanan saya dimulai dari merancang UI/UX dan menggambar aset pixel untuk game 2D sebelum beralih ke pengembangan AR. Saya percaya proses belajar tidak pernah selesai, sehingga saya selalu terbuka untuk bereksplorasi dan mencoba hal-hal baru.
-                            </p>
-                        </div>
-
-                        <!-- REDESIGNED SOFTWARE & KEMAMPUAN SECTION -->
-                        <div class="mt-8 pt-6 border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- ===== ABOUT SECTION (JRPG STATUS SCREEN) ===== -->
+        <section id="about" class="py-24 md:py-36 relative z-10 font-pixel text-white" style="--neon-glow-color: #ff6f61;">
+            <div class="container mx-auto px-4 sm:px-6 max-w-5xl">
+                
+                <!-- Main JRPG Frame -->
+                <div class="relative bg-[#10121a]/90 backdrop-blur-md p-6 sm:p-10 about-reveal jrpg-frame transition-colors duration-500">
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
                             
-                            <!-- Software & Tools Panel -->
-                            <div class="glass-panel p-4 rounded-2xl border-white/15 bg-white/[0.03]">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
-                                    <span class="text-[11px] font-mono text-gray-300 uppercase tracking-widest font-semibold">Software & Tools</span>
+                            <!-- Left Column: Status Data -->
+                            <div class="lg:col-span-8 flex flex-col justify-start">
+                                
+                                <!-- Header -->
+                                <div class="mb-4">
+                                    <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold mb-2 tracking-tighter uppercase text-white drop-shadow-[2px_2px_0_#000]">
+                                        PROFILE DATA
+                                    </h2>
+                                    <div class="text-gray-400 text-xs sm:text-sm tracking-widest space-y-1">
+                                        <div>USER: <span class="text-[var(--neon-glow-color,#ff6f61)] transition-colors duration-500 font-bold">M. AHSANIL KHULUQ</span></div>
+                                        <div>GAME TECHNOLOGY STUDENT</div>
+                                    </div>
                                 </div>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2.5 py-1.5 rounded-xl bg-white/10 border border-white/15 text-xs font-mono text-white flex items-center gap-2">
-                                        <i class="fas fa-cube text-yellow-400 text-xs"></i> Unity (C#)
-                                    </span>
-                                    <span class="px-2.5 py-1.5 rounded-xl bg-white/10 border border-white/15 text-xs font-mono text-white flex items-center gap-2">
-                                        <i class="fas fa-vr-cardboard text-fuchsia-600 text-xs"></i> Vuforia Engine
-                                    </span>
-                                    <span class="px-2.5 py-1.5 rounded-xl bg-white/10 border border-white/15 text-xs font-mono text-white flex items-center gap-2">
-                                        <i class="fas fa-network-wired text-cyan-300 text-xs"></i> Unity NGO
-                                    </span>
-                                    <span class="px-2.5 py-1.5 rounded-xl bg-white/10 border border-white/15 text-xs font-mono text-white flex items-center gap-2">
-                                        <i class="fas fa-palette text-orange-400 text-xs"></i> Canva
-                                    </span>
-                                    <span class="px-2.5 py-1.5 rounded-xl bg-white/10 border border-white/15 text-xs font-mono text-white flex items-center gap-2">
-                                        <i class="fas fa-paint-brush text-emerald-400 text-xs"></i> Photoshop
-                                    </span>
-                                    <span class="px-2.5 py-1.5 rounded-xl bg-white/10 border border-white/15 text-xs font-mono text-white flex items-center gap-2">
-                                        <i class="fas fa-cubes text-fuchsia-600 text-xs"></i> Aseprite
-                                    </span>
+
+                                <!-- Horizontal Line -->
+                                <div class="w-full h-px bg-[#384159] my-3"></div>
+
+                                <!-- Introduction -->
+                                <div class="mb-4">
+                                    <div class="text-yellow-400 text-sm sm:text-base tracking-widest mb-3 uppercase">
+                                        [I] SYSTEM_LOG (BIOGRAPHY)
+                                    </div>
+                                    <div class="text-gray-300 font-sans text-sm sm:text-base leading-relaxed space-y-2">
+                                        <p>
+                                            Saya adalah seorang Programmer AR dengan fondasi desain yang berfokus menciptakan pengalaman interaktif melalui pixel art, game development, dan Augmented Reality.
+                                        </p>
+                                        <p>
+                                            Perjalanan saya dimulai dari merancang UI/UX dan menggambar aset kecil di buku tulis, sebelum perlahan beralih ke digital tools dan game engines.
+                                        </p>
+                                    </div>
                                 </div>
+
+                                <!-- Horizontal Line -->
+                                <div class="w-full h-px bg-[#384159] my-3"></div>
+
+                                <!-- Equipped Gear -->
+                                <div>
+                                    <div class="text-yellow-400 text-sm sm:text-base tracking-widest mb-3 uppercase">
+                                        [II] EQUIPPED GEAR (INVENTORY)
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 uppercase text-xs sm:text-sm">
+                                        <!-- Gear 1 -->
+                                        <div class="border-[3px] border-[#384159] bg-[#161925] p-2 flex justify-between items-center rounded-sm hover:border-[var(--neon-glow-color,#ff6f61)] transition-colors duration-300 group cursor-default gap-2">
+                                            <span class="text-white group-hover:text-[var(--neon-glow-color,#ff6f61)] transition-colors duration-300">[ Aseprite ]</span>
+                                            <span class="text-white group-hover:text-[var(--neon-glow-color,#ff6f61)] shrink-0">🎨</span>
+                                        </div>
+                                        <!-- Gear 2 -->
+                                        <div class="border-[3px] border-[#384159] bg-[#161925] p-2 flex justify-between items-center rounded-sm hover:border-[var(--neon-glow-color,#ff6f61)] transition-colors duration-300 group cursor-default gap-2">
+                                            <span class="text-white group-hover:text-[var(--neon-glow-color,#ff6f61)] transition-colors duration-300">[ Unity ]</span>
+                                            <span class="text-white group-hover:text-[var(--neon-glow-color,#ff6f61)] shrink-0">🧊</span>
+                                        </div>
+                                        <!-- Gear 3 -->
+                                        <div class="border-[3px] border-[#384159] bg-[#161925] p-2 flex justify-between items-center rounded-sm hover:border-[var(--neon-glow-color,#ff6f61)] transition-colors duration-300 group cursor-default gap-2">
+                                            <span class="text-white group-hover:text-[var(--neon-glow-color,#ff6f61)] transition-colors duration-300">[ Canva ]</span>
+                                            <span class="text-white group-hover:text-[var(--neon-glow-color,#ff6f61)] shrink-0">🖼️</span>
+                                        </div>
+                                        <!-- Gear 4 -->
+                                        <div class="border-[3px] border-[#384159] bg-[#161925] p-2 flex justify-between items-center rounded-sm hover:border-[var(--neon-glow-color,#ff6f61)] transition-colors duration-300 group cursor-default gap-2">
+                                            <span class="text-white group-hover:text-[var(--neon-glow-color,#ff6f61)] transition-colors duration-300">[ Photoshop ]</span>
+                                            <span class="text-white group-hover:text-[var(--neon-glow-color,#ff6f61)] shrink-0">🖌️</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                             </div>
 
-                            <!-- Kemampuan & Spesialisasi Panel -->
-                            <div class="glass-panel p-4 rounded-2xl border-white/15 bg-white/[0.03]">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="w-2 h-2 rounded-full bg-fuchsia-600 animate-pulse"></span>
-                                    <span class="text-[11px] font-mono text-gray-300 uppercase tracking-widest font-semibold">Kemampuan & Spesialisasi</span>
-                                </div>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2.5 py-1.5 rounded-xl bg-white/10 border border-white/15 text-xs font-mono text-white/90">🕶️ AR Development</span>
-                                    <span class="px-2.5 py-1.5 rounded-xl bg-white/10 border border-white/15 text-xs font-mono text-white/90">📱 UI/UX Design</span>
-                                    <span class="px-2.5 py-1.5 rounded-xl bg-white/10 border border-white/15 text-xs font-mono text-white/90">👾 2D Pixel Art</span>
+                            <!-- Right Column: Photo -->
+                            <div class="lg:col-span-4 flex flex-col items-center justify-start mt-8 lg:mt-0">
+                                <div class="w-full aspect-[3/4] border-[3px] border-[var(--neon-glow-color,#ff6f61)] p-1.5 relative overflow-hidden transition-colors duration-500 bg-[#161925]">
+                                    <div id="bio-photo-container" class="w-full h-full relative overflow-hidden bg-[#161925]">
+                                        <!-- Photo -->
+                                        <img id="bio-photo" src="images/WhatsApp Image 2026-07-24 at 15.37.40.jpeg" onerror="this.src='https://placehold.co/400x533/1e1e24/FFFFFF?text=Khuluq'" alt="Profile Photo" class="w-full h-full object-cover object-center relative z-10">
+                                        
+                                        <!-- Dark block to mimic fade into background -->
+                                        <div class="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-[#161925] via-[#161925]/80 to-transparent z-30 pointer-events-none"></div>
+                                    </div>
                                 </div>
                             </div>
+                            
+                        </div>
+                </div>
 
+            </div>
+        </section>
+
+        <!-- ===== PORTFOLIO SECTION (HORIZONTAL SCROLL) ===== -->
+        <section id="portfolio" class="relative z-10" style="height: 400vh;">
+            <div class="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center">
+                
+                <!-- Fixed Header inside sticky -->
+                <div class="absolute top-12 md:top-16 w-full text-center z-50 pointer-events-none">
+                    <h2 class="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tighter uppercase text-white drop-shadow-[2px_2px_0_#000]">KARYA PILIHAN</h2>
+                </div>
+
+                <!-- Horizontal Track -->
+                <div id="portfolio-track" class="flex flex-row items-center h-full w-max will-change-transform pt-32 md:pt-40 pb-10 gap-8 sm:gap-16 px-8 sm:px-16">
+                    
+                    <!-- PROJECT ITEM 1 -->
+                    <div class="w-[85vw] max-w-[1300px] shrink-0 scroll-item-reveal">
+                        <div class="relative w-full mx-auto group project-trigger cursor-pointer jrpg-frame p-6 sm:p-12"
+                             style="--neon-glow-color: #38156e; background: rgba(56, 21, 110, 0.4);"
+                             data-title="AR Soccer Strategy: Real-Time Virtual Set Studio"
+                             data-year="2026"
+                             data-img="images/Proyek1/WhatsApp Image 2026-07-23 at 13.45.59.jpeg"
+                             data-imgs="images/Proyek1/WhatsApp Image 2026-07-23 at 13.45.59.jpeg,images/Proyek1/WhatsApp Image 2026-07-23 at 13.48.28.jpeg,images/Proyek1/WhatsApp Image 2026-07-23 at 13.44.26.jpeg"
+                             data-desc="Proyek ini menghadirkan ekosistem Virtual Set Studio berbasis Augmented Reality (AR) untuk siaran analisis taktik sepak bola."
+                             data-category="AR & Virtual Set Studio"
+                             data-tools="Unity Engine, C#, Vuforia SDK, OBS Studio">
+                            
+                            
+                            <div class="text-center mb-8 px-4">
+                                <h3 class="font-serif text-2xl sm:text-4xl text-white font-bold tracking-tight drop-shadow-[2px_4px_0_rgba(0,0,0,1)]">
+                                    AR Soccer Strategy: Real-Time Virtual Set Studio
+                                </h3>
+                            </div>
+
+                            <div class="flex flex-col lg:flex-row items-center lg:items-start min-h-[450px] relative">
+                                <div class="relative w-full lg:w-[60%] h-[250px] sm:h-[500px] shrink-0 pointer-events-none">
+                                    <img src="images/Proyek1/WhatsApp Image 2026-07-23 at 13.48.28.jpeg" alt="BG 1" class="absolute right-[5%] top-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <img src="images/Proyek1/WhatsApp Image 2026-07-23 at 13.44.26.jpeg" alt="BG 2" class="absolute left-0 bottom-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] aspect-video z-20 group-hover:scale-105 transition-transform duration-500 shadow-[15px_15px_0_rgba(0,0,0,1)]">
+                                        <img src="images/Proyek1/WhatsApp Image 2026-07-23 at 13.45.59.jpeg" alt="Main" class="w-full h-full object-cover border-[4px] border-yellow-400 group-hover:border-white transition-colors duration-500">
+                                    </div>
+                                </div>
+                                <div class="relative w-full lg:w-[40%] mt-8 lg:mt-0 lg:-ml-12 lg:translate-y-12 z-30 px-6 sm:px-12 lg:px-0">
+                                    <div class="bg-[#090212]/95 backdrop-blur-md border border-white/10 shadow-[10px_10px_0_rgba(0,0,0,1)] p-6 sm:p-8 rotate-3 group-hover:rotate-0 transition-transform duration-500 pointer-events-auto">
+                                        <p class="text-gray-300 font-sans text-sm sm:text-base leading-relaxed">
+                                            Proyek ini menghadirkan ekosistem Virtual Set Studio berbasis Augmented Reality (AR) untuk siaran analisis taktik sepak bola secara real-time.
+                                        </p>
+                                        <div class="mt-4 flex flex-wrap gap-2 text-xs font-mono text-yellow-400">
+                                            <span class="px-2 py-1 bg-yellow-400/10 border border-yellow-400/30">Unity</span>
+                                            <span class="px-2 py-1 bg-yellow-400/10 border border-yellow-400/30">C#</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- PROJECT ITEM 2 -->
+                    <div class="w-[85vw] max-w-[1300px] shrink-0 scroll-item-reveal">
+                        <div class="relative w-full mx-auto group project-trigger cursor-pointer jrpg-frame p-6 sm:p-12"
+                             style="--neon-glow-color: #38156e; background: rgba(56, 21, 110, 0.4);"
+                             data-title="Environment Artist : Playland Hidden Gems"
+                             data-year="2024 • Durasi: 3 Bulan"
+                             data-img="images/Proyek2/Fullmap..gif"
+                             data-imgs="images/Proyek2/Fullmap..gif,images/Proyek2/Path.gif,images/Proyek2/Building.png"
+                             data-desc="Membuat deisign dan map pada proyek game Playland Hidden Gems di lokasi makassar. Durasi pengerjaan: 3 Bulan."
+                             data-category="Environment pixel artist, animasi pixel, design map, dan objek pixel"
+                             data-tools="Aseprite, Photoshop">
+                            
+                            
+                            <div class="text-center mb-8 px-4">
+                                <h3 class="font-serif text-2xl sm:text-4xl text-white font-bold tracking-tight drop-shadow-[2px_4px_0_rgba(0,0,0,1)]">
+                                    Environment Artist : Playland Hidden Gems
+                                </h3>
+                            </div>
+
+                            <div class="flex flex-col lg:flex-row items-center lg:items-start min-h-[450px] relative">
+                                <div class="relative w-full lg:w-[60%] h-[250px] sm:h-[500px] shrink-0 pointer-events-none">
+                                    <img src="images/Proyek2/Building.png" alt="BG 1" class="absolute right-[5%] top-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <img src="images/Proyek2/Path.gif" alt="BG 2" class="absolute left-0 bottom-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] aspect-video z-20 group-hover:scale-105 transition-transform duration-500 shadow-[15px_15px_0_rgba(0,0,0,1)]">
+                                        <img src="images/Proyek2/Fullmap..gif" alt="Main" class="w-full h-full object-cover border-[4px] border-fuchsia-600 group-hover:border-white transition-colors duration-500">
+                                    </div>
+                                </div>
+                                <div class="relative w-full lg:w-[40%] mt-8 lg:mt-0 lg:-ml-12 lg:translate-y-12 z-30 px-6 sm:px-12 lg:px-0">
+                                    <div class="bg-[#090212]/95 backdrop-blur-md border border-white/10 shadow-[10px_10px_0_rgba(0,0,0,1)] p-6 sm:p-8 rotate-3 group-hover:rotate-0 transition-transform duration-500 pointer-events-auto">
+                                        <p class="text-gray-300 font-sans text-sm sm:text-base leading-relaxed">
+                                            Aset piksel & desain lingkungan peta game 2D bertema lokasi khas Kota Makassar.
+                                        </p>
+                                        <div class="mt-4 flex flex-wrap gap-2 text-xs font-mono text-fuchsia-400">
+                                            <span class="px-2 py-1 bg-fuchsia-600/10 border border-fuchsia-600/30">Aseprite</span>
+                                            <span class="px-2 py-1 bg-fuchsia-600/10 border border-fuchsia-600/30">Photoshop</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT ITEM 3 -->
+                    <div class="w-[85vw] max-w-[1300px] shrink-0 scroll-item-reveal">
+                        <div class="relative w-full mx-auto group project-trigger cursor-pointer jrpg-frame p-6 sm:p-12"
+                             style="--neon-glow-color: #38156e; background: rgba(56, 21, 110, 0.4);"
+                             data-title="UI/UX : Magic Spell"
+                             data-year="2024 • Durasi: 1 Bulan"
+                             data-img="images/Proyek3/UI Tutorial.gif"
+                             data-imgs="images/Proyek3/UI Tutorial.gif,images/Proyek3/UI Logo.png,images/Proyek3/UI_Credit.png"
+                             data-desc="Membuat UI/UX dan Logo pada game Magic Speel. Durasi pengerjaan: 1 Bulan."
+                             data-category="UI/UX designer"
+                             data-tools="Aseprite, Photoshop">
+                            
+                            
+                            <div class="text-center mb-8 px-4">
+                                <h3 class="font-serif text-2xl sm:text-4xl text-white font-bold tracking-tight drop-shadow-[2px_4px_0_rgba(0,0,0,1)]">
+                                    Magic Spell UI/UX
+                                </h3>
+                            </div>
+
+                            <div class="flex flex-col lg:flex-row items-center lg:items-start min-h-[450px] relative">
+                                <div class="relative w-full lg:w-[60%] h-[250px] sm:h-[500px] shrink-0 pointer-events-none">
+                                    <img src="images/Proyek3/UI Logo.png" alt="BG 1" class="absolute right-[5%] top-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <img src="images/Proyek3/UI_Credit.png" alt="BG 2" class="absolute left-0 bottom-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] aspect-video z-20 group-hover:scale-105 transition-transform duration-500 shadow-[15px_15px_0_rgba(0,0,0,1)]">
+                                        <img src="images/Proyek3/UI Tutorial.gif" alt="Main" class="w-full h-full object-cover border-[4px] border-emerald-400 group-hover:border-white transition-colors duration-500">
+                                    </div>
+                                </div>
+                                <div class="relative w-full lg:w-[40%] mt-8 lg:mt-0 lg:-ml-12 lg:translate-y-12 z-30 px-6 sm:px-12 lg:px-0">
+                                    <div class="bg-[#090212]/95 backdrop-blur-md border border-white/10 shadow-[10px_10px_0_rgba(0,0,0,1)] p-6 sm:p-8 rotate-3 group-hover:rotate-0 transition-transform duration-500 pointer-events-auto">
+                                        <p class="text-gray-300 font-sans text-sm sm:text-base leading-relaxed">
+                                            Antarmuka pengguna (UI) & desain logo game bertema dunia sihir Magic Spell.
+                                        </p>
+                                        <div class="mt-4 flex flex-wrap gap-2 text-xs font-mono text-emerald-400">
+                                            <span class="px-2 py-1 bg-emerald-400/10 border border-emerald-400/30">Aseprite</span>
+                                            <span class="px-2 py-1 bg-emerald-400/10 border border-emerald-400/30">Photoshop</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT ITEM 4 -->
+                    <div class="w-[85vw] max-w-[1300px] shrink-0 scroll-item-reveal">
+                        <div class="relative w-full mx-auto group project-trigger cursor-pointer jrpg-frame p-6 sm:p-12"
+                             style="--neon-glow-color: #38156e; background: rgba(56, 21, 110, 0.4);"
+                             data-title="Environment Artist : Road Of Spices"
+                             data-year="2023 • Durasi: 4 Bulan"
+                             data-img="images/Proyek4/Desain tanpa judul (9).png"
+                             data-imgs="images/Proyek4/Desain tanpa judul (9).png,images/Proyek4/Desain tanpa judul (8).png,images/Proyek4/Desain tanpa judul (10).png"
+                             data-desc="Riset implementasi pembuatan environment untuk pembuatan proyek game Road Of Spices. Durasi pengerjaan: 4 Bulan."
+                             data-category="Environment Pixel Artist"
+                             data-tools="Aseprite, Photoshop">
+                            
+                            
+                            <div class="text-center mb-8 px-4">
+                                <h3 class="font-serif text-2xl sm:text-4xl text-white font-bold tracking-tight drop-shadow-[2px_4px_0_rgba(0,0,0,1)]">
+                                    Road Of Spices
+                                </h3>
+                            </div>
+
+                            <div class="flex flex-col lg:flex-row items-center lg:items-start min-h-[450px] relative">
+                                <div class="relative w-full lg:w-[60%] h-[250px] sm:h-[500px] shrink-0 pointer-events-none">
+                                    <img src="images/Proyek4/Desain tanpa judul (10).png" alt="BG 1" class="absolute right-[5%] top-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <img src="images/Proyek4/Desain tanpa judul (8).png" alt="BG 2" class="absolute left-0 bottom-0 w-[60%] aspect-video object-cover border-[3px] border-[#384159] shadow-[8px_8px_0_rgba(0,0,0,1)] opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] aspect-video z-20 group-hover:scale-105 transition-transform duration-500 shadow-[15px_15px_0_rgba(0,0,0,1)]">
+                                        <img src="images/Proyek4/Desain tanpa judul (9).png" alt="Main" class="w-full h-full object-cover border-[4px] border-amber-400 group-hover:border-white transition-colors duration-500">
+                                    </div>
+                                </div>
+                                <div class="relative w-full lg:w-[40%] mt-8 lg:mt-0 lg:-ml-12 lg:translate-y-12 z-30 px-6 sm:px-12 lg:px-0">
+                                    <div class="bg-[#090212]/95 backdrop-blur-md border border-white/10 shadow-[10px_10px_0_rgba(0,0,0,1)] p-6 sm:p-8 rotate-3 group-hover:rotate-0 transition-transform duration-500 pointer-events-auto">
+                                        <p class="text-gray-300 font-sans text-sm sm:text-base leading-relaxed">
+                                            Riset & implementasi pembuatan lanskap piksel retro untuk proyek game Road Of Spices.
+                                        </p>
+                                        <div class="mt-4 flex flex-wrap gap-2 text-xs font-mono text-amber-400">
+                                            <span class="px-2 py-1 bg-amber-400/10 border border-amber-400/30">Aseprite</span>
+                                            <span class="px-2 py-1 bg-amber-400/10 border border-amber-400/30">Photoshop</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
 
                 </div>
             </div>
         </section>
 
-        <!-- SECTION SEPARATOR BEAM -->
-        <div class="section-separator-beam reveal-on-scroll"></div>
-
-        <!-- ===== PORTFOLIO SECTION (IMMERSIVE PARALLAX & RIGHT-SIDE TIMELINE) ===== -->
-        <section id="portfolio" class="py-24 relative z-10 overflow-hidden">
-            <div class="container mx-auto px-4 sm:px-6 max-w-7xl">
-                <!-- Header -->
-                <div class="text-center mb-16 sm:mb-24 reveal-on-scroll">
-                    <span class="text-xs font-mono text-yellow-400 uppercase tracking-widest block mb-2 font-semibold drop-shadow-md">Selected Works</span>
-                    <h2 class="font-serif text-3xl sm:text-5xl md:text-6xl text-white font-bold tracking-tight drop-shadow-xl">Karya Pilihan</h2>
-                </div>
-
-                <!-- Right-Side Timeline Container -->
-                <div class="relative pr-6 sm:pr-10 md:pr-14 lg:pr-16">
-                    <!-- Glowing Vertical Beam Line on the Right -->
-                    <div class="absolute right-2 sm:right-4 md:right-6 lg:right-8 top-4 bottom-4 w-[2px] bg-gradient-to-b from-yellow-400 via-purple-500 to-emerald-400 rounded-full shadow-[0_0_15px_rgba(0,240,255,0.6)]"></div>
-
-                    <div class="space-y-24 sm:space-y-32">
-
-                        <!-- PROJECT ITEM 1 -->
-                        <div class="relative reveal-on-scroll project-parallax-wrapper group">
-                            <!-- Glowing Node Dot on the Right -->
-                            <div class="absolute -right-[1.55rem] sm:-right-[2.05rem] md:-right-[2.55rem] lg:-right-[3.05rem] top-1/2 -translate-y-1/2 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#38156e] border-[3px] border-yellow-400 shadow-[0_0_20px_#ffd460] z-20 flex items-center justify-center">
-                                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-yellow-400 animate-pulse"></div>
-                            </div>
-
-                            <!-- Glass Panel Card -->
-                            <div class="glass-panel rounded-[2rem] project-trigger cursor-pointer flex flex-col justify-between overflow-hidden shadow-2xl relative border border-white/10 hover:border-yellow-400/30 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,240,255,0.15)]"
-                                 data-title="AR Soccer Strategy: Real-Time Virtual Set Studio"
-                                 data-year="2026"
-                                 data-img="images/Proyek1/WhatsApp Image 2026-07-23 at 13.45.59.jpeg"
-                                 data-imgs="images/Proyek1/WhatsApp Image 2026-07-23 at 13.45.59.jpeg,images/Proyek1/WhatsApp Image 2026-07-23 at 13.48.28.jpeg,images/Proyek1/WhatsApp Image 2026-07-23 at 13.44.26.jpeg"
-                                 data-desc="Proyek ini menghadirkan ekosistem Virtual Set Studio berbasis Augmented Reality (AR) untuk siaran analisis taktik sepak bola."
-                                 data-category="AR & Virtual Set Studio"
-                                 data-tools="Unity Engine, C#, Vuforia SDK, OBS Studio">
-                                
-                                <!-- Image Banner -->
-                                <div class="w-full h-[360px] sm:h-[460px] md:h-[540px] overflow-hidden relative">
-                                    <img src="images/Proyek1/WhatsApp Image 2026-07-23 at 13.45.59.jpeg" alt="AR Soccer Strategy" class="w-full h-full object-cover">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#38156e] via-transparent to-transparent"></div>
-                                    
-                                    <!-- Badges -->
-                                    <div class="absolute top-6 left-6 flex flex-wrap items-center gap-3">
-                                        <span class="px-4 py-1.5 bg-black/60 backdrop-blur-md border border-yellow-400/40 rounded-full text-xs font-mono text-cyan-300 font-bold shadow-lg">01 / 04</span>
-                                        <span class="px-4 py-1.5 bg-cyan-900/60 backdrop-blur-md border border-yellow-400/30 rounded-full text-xs font-mono text-cyan-100 hidden sm:inline-block">🕶️ AR & Virtual Studio</span>
-                                        <span class="px-3.5 py-1.5 bg-black/50 backdrop-blur-md border border-white/20 rounded-full text-xs font-mono text-gray-200">2026</span>
-                                    </div>
-                                    
-                                    <!-- Title Inside Image -->
-                                    <div class="absolute bottom-6 left-6 right-6">
-                                        <h3 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-extrabold tracking-tight drop-shadow-2xl">
-                                            AR Soccer Strategy
-                                        </h3>
-                                    </div>
-                                </div>
-
-                                <!-- Footer Info -->
-                                <div class="p-6 sm:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 bg-[#0a0b10]/95 backdrop-blur-xl relative z-10 border-t border-white/5">
-                                    <p class="text-gray-300 text-sm sm:text-base font-light max-w-2xl leading-relaxed">
-                                        Ekosistem Virtual Set Studio berbasis Augmented Reality (AR) untuk siaran analisis taktik sepak bola secara real-time.
-                                    </p>
-                                    <div class="shrink-0 flex items-center gap-5">
-                                        <span class="text-xs font-mono text-cyan-200 hidden lg:inline-block tracking-wider">Unity • C#</span>
-                                        <div class="w-12 h-12 rounded-full bg-yellow-400/10 border border-yellow-400/40 flex items-center justify-center transition-all duration-300 group-hover:bg-yellow-400/30 group-hover:scale-110">
-                                            <i class="fas fa-arrow-right text-yellow-400"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PROJECT ITEM 2 -->
-                        <div class="relative reveal-on-scroll project-parallax-wrapper group">
-                            <!-- Glowing Node Dot on the Right -->
-                            <div class="absolute -right-[1.55rem] sm:-right-[2.05rem] md:-right-[2.55rem] lg:-right-[3.05rem] top-1/2 -translate-y-1/2 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#38156e] border-[3px] border-fuchsia-600 shadow-[0_0_20px_#ab2e91] z-20 flex items-center justify-center">
-                                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-fuchsia-600 animate-pulse"></div>
-                            </div>
-
-                            <!-- Glass Panel Card -->
-                            <div class="glass-panel rounded-[2rem] project-trigger cursor-pointer flex flex-col justify-between overflow-hidden shadow-2xl relative border border-white/10 hover:border-fuchsia-600/30 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(168,85,247,0.15)]"
-                                 data-title="Environment Artist : Playland Hidden Gems"
-                                 data-year="2024 • Durasi: 3 Bulan"
-                                 data-img="images/Proyek2/Fullmap..gif"
-                                 data-imgs="images/Proyek2/Fullmap..gif,images/Proyek2/Path.gif,images/Proyek2/Building.png"
-                                 data-desc="Membuat deisign dan map pada proyek game Playland Hidden Gems di lokasi makassar. Durasi pengerjaan: 3 Bulan."
-                                 data-category="Environment pixel artist, animasi pixel, design map, dan objek pixel"
-                                 data-tools="Aseprite, Photoshop">
-                                
-                                <!-- Image Banner -->
-                                <div class="w-full h-[360px] sm:h-[460px] md:h-[540px] overflow-hidden relative">
-                                    <img src="images/Proyek2/Building.png" alt="Playland Hidden Gems" class="w-full h-full object-cover">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#38156e] via-transparent to-transparent"></div>
-                                    
-                                    <!-- Badges -->
-                                    <div class="absolute top-6 left-6 flex flex-wrap items-center gap-3">
-                                        <span class="px-4 py-1.5 bg-black/60 backdrop-blur-md border border-fuchsia-600/40 rounded-full text-xs font-mono text-purple-300 font-bold shadow-lg">02 / 04</span>
-                                        <span class="px-4 py-1.5 bg-purple-900/60 backdrop-blur-md border border-fuchsia-600/30 rounded-full text-xs font-mono text-purple-100 hidden sm:inline-block">👾 Environment Pixel Art</span>
-                                        <span class="px-3.5 py-1.5 bg-black/50 backdrop-blur-md border border-white/20 rounded-full text-xs font-mono text-gray-200">2024</span>
-                                    </div>
-                                    
-                                    <!-- Title Inside Image -->
-                                    <div class="absolute bottom-6 left-6 right-6">
-                                        <h3 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-extrabold tracking-tight drop-shadow-2xl">
-                                            Playland Hidden Gems
-                                        </h3>
-                                    </div>
-                                </div>
-
-                                <!-- Footer Info -->
-                                <div class="p-6 sm:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 bg-[#0a0b10]/95 backdrop-blur-xl relative z-10 border-t border-white/5">
-                                    <p class="text-gray-300 text-sm sm:text-base font-light max-w-2xl leading-relaxed">
-                                        Aset piksel & desain lingkungan peta game 2D bertema lokasi khas Kota Makassar.
-                                    </p>
-                                    <div class="shrink-0 flex items-center gap-5">
-                                        <span class="text-xs font-mono text-purple-200 hidden lg:inline-block tracking-wider">Aseprite • Photoshop</span>
-                                        <div class="w-12 h-12 rounded-full bg-fuchsia-600/10 border border-fuchsia-600/40 flex items-center justify-center transition-all duration-300 group-hover:bg-fuchsia-600/30 group-hover:scale-110">
-                                            <i class="fas fa-arrow-right text-fuchsia-600"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PROJECT ITEM 3 -->
-                        <div class="relative reveal-on-scroll project-parallax-wrapper group">
-                            <!-- Glowing Node Dot on the Right -->
-                            <div class="absolute -right-[1.55rem] sm:-right-[2.05rem] md:-right-[2.55rem] lg:-right-[3.05rem] top-1/2 -translate-y-1/2 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#38156e] border-[3px] border-emerald-400 shadow-[0_0_20px_#10b981] z-20 flex items-center justify-center">
-                                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-400 animate-pulse"></div>
-                            </div>
-
-                            <!-- Glass Panel Card -->
-                            <div class="glass-panel rounded-[2rem] project-trigger cursor-pointer flex flex-col justify-between overflow-hidden shadow-2xl relative border border-white/10 hover:border-emerald-400/30 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(16,185,129,0.15)]"
-                                 data-title="UI/UX : Magic Spell"
-                                 data-year="2024 • Durasi: 1 Bulan"
-                                 data-img="images/Proyek3/UI Tutorial.gif"
-                                 data-imgs="images/Proyek3/UI Tutorial.gif,images/Proyek3/UI Logo.png,images/Proyek3/UI_Credit.png"
-                                 data-desc="Membuat UI/UX dan Logo pada game Magic Speel. Durasi pengerjaan: 1 Bulan."
-                                 data-category="UI/UX designer"
-                                 data-tools="Aseprite, Photoshop">
-                                
-                                <!-- Image Banner -->
-                                <div class="w-full h-[360px] sm:h-[460px] md:h-[540px] overflow-hidden relative">
-                                    <img src="images/Proyek3/UI Logo.png" alt="Magic Spell UI/UX" class="w-full h-full object-cover">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#38156e] via-transparent to-transparent"></div>
-                                    
-                                    <!-- Badges -->
-                                    <div class="absolute top-6 left-6 flex flex-wrap items-center gap-3">
-                                        <span class="px-4 py-1.5 bg-black/60 backdrop-blur-md border border-emerald-400/40 rounded-full text-xs font-mono text-emerald-300 font-bold shadow-lg">03 / 04</span>
-                                        <span class="px-4 py-1.5 bg-emerald-900/60 backdrop-blur-md border border-emerald-400/30 rounded-full text-xs font-mono text-emerald-100 hidden sm:inline-block">📱 UI/UX Design</span>
-                                        <span class="px-3.5 py-1.5 bg-black/50 backdrop-blur-md border border-white/20 rounded-full text-xs font-mono text-gray-200">2024</span>
-                                    </div>
-                                    
-                                    <!-- Title Inside Image -->
-                                    <div class="absolute bottom-6 left-6 right-6">
-                                        <h3 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-extrabold tracking-tight drop-shadow-2xl">
-                                            Magic Spell UI/UX
-                                        </h3>
-                                    </div>
-                                </div>
-
-                                <!-- Footer Info -->
-                                <div class="p-6 sm:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 bg-[#0a0b10]/95 backdrop-blur-xl relative z-10 border-t border-white/5">
-                                    <p class="text-gray-300 text-sm sm:text-base font-light max-w-2xl leading-relaxed">
-                                        Antarmuka pengguna (UI) & desain logo game bertema dunia sihir Magic Spell.
-                                    </p>
-                                    <div class="shrink-0 flex items-center gap-5">
-                                        <span class="text-xs font-mono text-emerald-200 hidden lg:inline-block tracking-wider">Aseprite • Photoshop</span>
-                                        <div class="w-12 h-12 rounded-full bg-emerald-400/10 border border-emerald-400/40 flex items-center justify-center transition-all duration-300 group-hover:bg-emerald-400/30 group-hover:scale-110">
-                                            <i class="fas fa-arrow-right text-emerald-400"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PROJECT ITEM 4 -->
-                        <div class="relative reveal-on-scroll project-parallax-wrapper group">
-                            <!-- Glowing Node Dot on the Right -->
-                            <div class="absolute -right-[1.55rem] sm:-right-[2.05rem] md:-right-[2.55rem] lg:-right-[3.05rem] top-1/2 -translate-y-1/2 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#38156e] border-[3px] border-amber-400 shadow-[0_0_20px_#f59e0b] z-20 flex items-center justify-center">
-                                <div class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-amber-400 animate-pulse"></div>
-                            </div>
-
-                            <!-- Glass Panel Card -->
-                            <div class="glass-panel rounded-[2rem] project-trigger cursor-pointer flex flex-col justify-between overflow-hidden shadow-2xl relative border border-white/10 hover:border-amber-400/30 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(245,158,11,0.15)]"
-                                 data-title="Environment Artist : Road Of Spices"
-                                 data-year="2023 • Durasi: 4 Bulan"
-                                 data-img="images/Proyek4/Desain tanpa judul (9).png"
-                                 data-imgs="images/Proyek4/Desain tanpa judul (9).png,images/Proyek4/Desain tanpa judul (8).png,images/Proyek4/Desain tanpa judul (10).png"
-                                 data-desc="Riset implementasi pembuatan environment untuk pembuatan proyek game Road Of Spices. Durasi pengerjaan: 4 Bulan."
-                                 data-category="Environment Pixel Artist"
-                                 data-tools="Aseprite, Photoshop">
-                                
-                                <!-- Image Banner -->
-                                <div class="w-full h-[360px] sm:h-[460px] md:h-[540px] overflow-hidden relative">
-                                    <img src="images/Proyek4/Desain tanpa judul (9).png" alt="Road Of Spices" class="w-full h-full object-cover">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#38156e] via-transparent to-transparent"></div>
-                                    
-                                    <!-- Badges -->
-                                    <div class="absolute top-6 left-6 flex flex-wrap items-center gap-3">
-                                        <span class="px-4 py-1.5 bg-black/60 backdrop-blur-md border border-amber-400/40 rounded-full text-xs font-mono text-amber-300 font-bold shadow-lg">04 / 04</span>
-                                        <span class="px-4 py-1.5 bg-amber-900/60 backdrop-blur-md border border-amber-400/30 rounded-full text-xs font-mono text-amber-100 hidden sm:inline-block">👾 Environment Pixel Art</span>
-                                        <span class="px-3.5 py-1.5 bg-black/50 backdrop-blur-md border border-white/20 rounded-full text-xs font-mono text-gray-200">2023</span>
-                                    </div>
-                                    
-                                    <!-- Title Inside Image -->
-                                    <div class="absolute bottom-6 left-6 right-6">
-                                        <h3 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-extrabold tracking-tight drop-shadow-2xl">
-                                            Road Of Spices
-                                        </h3>
-                                    </div>
-                                </div>
-
-                                <!-- Footer Info -->
-                                <div class="p-6 sm:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 bg-[#0a0b10]/95 backdrop-blur-xl relative z-10 border-t border-white/5">
-                                    <p class="text-gray-300 text-sm sm:text-base font-light max-w-2xl leading-relaxed">
-                                        Riset & implementasi pembuatan lanskap piksel retro untuk proyek game Road Of Spices.
-                                    </p>
-                                    <div class="shrink-0 flex items-center gap-5">
-                                        <span class="text-xs font-mono text-amber-200 hidden lg:inline-block tracking-wider">Aseprite • Photoshop</span>
-                                        <div class="w-12 h-12 rounded-full bg-amber-400/10 border border-amber-400/40 flex items-center justify-center transition-all duration-300 group-hover:bg-amber-400/30 group-hover:scale-110">
-                                            <i class="fas fa-arrow-right text-amber-400"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Tombol Lihat Semua Karya -->
-                <div class="text-center mt-24 reveal-on-scroll">
-                    <a href="karya.html" class="px-10 py-4 rounded-full font-mono text-sm tracking-[0.2em] uppercase inline-flex items-center gap-3 border border-white/20 bg-white/[0.03] text-white shadow-xl hover:bg-white/[0.1] hover:border-yellow-400 transition-all duration-300 group backdrop-blur-md">
-                        <span class="font-bold">Lihat Semua Galeri Karya</span>
-                        <i class="fas fa-arrow-right text-yellow-400 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-            </div>
+        <!-- VIEW ALL WORKS BUTTON (Below Portfolio) -->
+        <section class="py-20 md:py-32 flex justify-center items-center relative z-10">
+            <a href="karya.html" class="px-10 py-5 rounded-full font-mono text-sm sm:text-base tracking-[0.2em] uppercase inline-flex items-center gap-3 border-[3px] border-[#38156e] bg-[#38156e]/40 text-white shadow-[8px_8px_0_rgba(0,0,0,1)] hover:bg-[#38156e]/80 hover:border-yellow-400 transition-all duration-300 group backdrop-blur-md">
+                <span class="font-bold">Lihat Semua Galeri Karya</span>
+                <i class="fas fa-arrow-right text-yellow-400 group-hover:translate-x-2 transition-transform"></i>
+            </a>
         </section>
+
 
         <!-- SECTION SEPARATOR BEAM -->
         <div class="section-separator-beam reveal-on-scroll"></div>
@@ -421,7 +399,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 reveal-on-scroll delay-100">
                     <!-- Gmail Container -->
                     <a href="khuluq.1906@gmail.com" class="glass-panel p-8 rounded-3xl flex flex-col items-center justify-center text-center group cursor-pointer">
-                        <div class="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-2xl mb-4">
+                        <div class="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white text-2xl mb-4">
                             <i class="far fa-envelope text-yellow-400"></i>
                         </div>
                         <h3 class="font-serif text-2xl text-white font-semibold">Gmail</h3>
@@ -429,7 +407,7 @@
 
                     <!-- LinkedIn Container -->
                     <a href="https://www.linkedin.com/in/khuluq369/" target="_blank" rel="noopener noreferrer" class="glass-panel p-8 rounded-3xl flex flex-col items-center justify-center text-center group cursor-pointer">
-                        <div class="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-2xl mb-4">
+                        <div class="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white text-2xl mb-4">
                             <i class="fab fa-linkedin-in text-yellow-400"></i>
                         </div>
                         <h3 class="font-serif text-2xl text-white font-semibold">LinkedIn</h3>
@@ -437,7 +415,7 @@
 
                     <!-- GitHub Container -->
                     <a href="https://github.com/LuqyMe" target="_blank" rel="noopener noreferrer" class="glass-panel p-8 rounded-3xl flex flex-col items-center justify-center text-center group cursor-pointer">
-                        <div class="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-2xl mb-4">
+                        <div class="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white text-2xl mb-4">
                             <i class="fab fa-github text-yellow-400"></i>
                         </div>
                         <h3 class="font-serif text-2xl text-white font-semibold">GitHub</h3>
@@ -445,6 +423,7 @@
                 </div>
             </div>
         </section>
+        </div> <!-- END CONTENT CURTAIN -->
     </main>
 
     <footer class="py-8 border-t border-white/5 bg-black/20 backdrop-blur-md relative z-10 text-center text-gray-500 text-xs">
@@ -559,9 +538,12 @@
         ];
 
         function handleHeaderScroll() {
-            // Header translucent background on scroll
+            // Header translucent background on scroll (Wait until curtain reaches header)
             if (headerEl) {
-                if (window.scrollY > 30) {
+                const curtain = document.getElementById('content-curtain');
+                const triggerPoint = curtain ? curtain.getBoundingClientRect().top : window.innerHeight;
+                
+                if (triggerPoint <= 80) { // 80px is roughly header height
                     headerEl.classList.add('scrolled');
                 } else {
                     headerEl.classList.remove('scrolled');
@@ -603,57 +585,168 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('revealed');
+                } else {
+                    // System Unload: Remove class when not in view so it animates again next time
+                    entry.target.classList.remove('revealed');
                 }
             });
         }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
         revealElements.forEach(el => revealObserver.observe(el));
 
+        // ===== PROFILE DATA DEDICATED REVEAL =====
+        // Triggers later (when the element is more visible in the center of the screen)
+        const aboutRevealElements = document.querySelectorAll('.about-reveal');
+        const aboutRevealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                } else {
+                    entry.target.classList.remove('revealed');
+                }
+            });
+        }, { threshold: 0.3, rootMargin: '0px 0px -25% 0px' });
 
+        aboutRevealElements.forEach(el => aboutRevealObserver.observe(el));
 
+        // ===== HORIZONTAL SCROLL ITEM REVEAL (PIXELATED/STEPPED) =====
+        const scrollItems = document.querySelectorAll('.scroll-item-reveal');
+        const scrollItemObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Masuk layar: Hapus state keluar ke kiri, tambahkan state visible
+                    entry.target.classList.remove('is-exiting-left');
+                    entry.target.classList.add('is-visible');
+                } else {
+                    // Keluar layar: Cek posisinya
+                    entry.target.classList.remove('is-visible');
+                    // Jika bounding box left < 0, berarti keluar dari kiri layar
+                    if (entry.boundingClientRect.left < 0) {
+                        entry.target.classList.add('is-exiting-left');
+                    } else {
+                        // Keluar/belum masuk dari kanan layar, kembalikan ke state awal (hapus is-exiting-left)
+                        entry.target.classList.remove('is-exiting-left');
+                    }
+                }
+            });
+        }, { threshold: 0.15 });
 
-        // ===== SMOOTH FADE IN / FADE OUT HEADLINE ENGINE =====
+        scrollItems.forEach(el => scrollItemObserver.observe(el));
+
+        // ===== SINGLE BAR DISSOLVE HEADLINE ENGINE =====
         const fadeTitle = document.getElementById('fade-headline-title');
+        const heroWrapper = document.getElementById('hero-content-wrapper');
+        const aboutSection = document.getElementById('about');
+        const frame = document.getElementById('hero-pixel-frame');
 
         const fadeRoles = [
             { title: 'Programmer AR', color: '#ff6f61' }, // Coral Sunset
             { title: '2D Pixel Artist', color: '#ab2e91' }, // Magenta
             { title: 'UI/UX Designer', color: '#ffd460' } // Gold
         ];
-
+        
         let fadeIndex = 0;
 
-        function cycleFadeHeadline() {
-            fadeIndex = (fadeIndex + 1) % fadeRoles.length;
-            const nextRole = fadeRoles[fadeIndex];
-
-            // Step 1: Neon sign flickers OFF
-            if (fadeTitle) {
-                fadeTitle.classList.remove('neon-on', 'neon-pulse');
-                fadeTitle.classList.add('neon-off');
-            }
-
-            // Step 2: Swap content & Neon sign flickers ON
-            setTimeout(() => {
-                if (fadeTitle) {
-                    fadeTitle.textContent = nextRole.title;
-                    const frame = document.getElementById('hero-pixel-frame');
-                    if (frame) frame.style.setProperty('--neon-glow-color', nextRole.color);
-                    fadeTitle.classList.remove('neon-off');
-                    fadeTitle.classList.add('neon-on');
-                }
-
-                // Step 3: Return to breathing neon pulse
-                setTimeout(() => {
-                    if (fadeTitle) {
-                        fadeTitle.classList.remove('neon-on');
-                        fadeTitle.classList.add('neon-pulse');
-                    }
-                }, 550);
-            }, 350);
+        // Create the localized pixel block overlay
+        const textOverlay = document.createElement('div');
+        textOverlay.id = 'text-pixel-overlay';
+        textOverlay.className = 'absolute inset-0 z-10 grid pointer-events-none';
+        // 15 columns, 5 rows = 75 blocks
+        textOverlay.style.gridTemplateColumns = 'repeat(15, 1fr)';
+        textOverlay.style.gridTemplateRows = 'repeat(5, 1fr)';
+        
+        const blocks = [];
+        for(let i=0; i<75; i++) {
+            const block = document.createElement('div');
+            block.className = 'text-pixel-block';
+            // Random delay between 0 and 0.4s for the chaotic dissolve
+            block.style.transitionDelay = `${Math.random() * 0.4}s`;
+            textOverlay.appendChild(block);
+            blocks.push(block);
+        }
+        
+        if (frame) {
+            frame.appendChild(textOverlay);
         }
 
-        setInterval(cycleFadeHeadline, 4200);
+        // ===== BIO PHOTO OVERLAY SETUP =====
+        const bioPhotoContainer = document.getElementById('bio-photo-container');
+        const bioPhoto = document.getElementById('bio-photo');
+        
+        const photoSources = [
+            'images/media_1786603990161.jpg', // Real Photo
+            'images/media_1786603997068.jpg'  // Pixel Art
+        ];
+        let photoIndex = 0;
+
+        const photoOverlay = document.createElement('div');
+        photoOverlay.id = 'photo-pixel-overlay';
+        photoOverlay.className = 'absolute inset-0 z-20 grid pointer-events-none';
+        // 12 columns, 16 rows = 192 blocks (matches 3:4 ratio roughly)
+        photoOverlay.style.gridTemplateColumns = 'repeat(12, 1fr)';
+        photoOverlay.style.gridTemplateRows = 'repeat(16, 1fr)';
+        
+        const photoBlocks = [];
+        for(let i=0; i<192; i++) {
+            const block = document.createElement('div');
+            block.className = 'text-pixel-block';
+            block.style.transitionDelay = `${Math.random() * 0.4}s`;
+            photoOverlay.appendChild(block);
+            photoBlocks.push(block);
+        }
+        
+        if (bioPhotoContainer) {
+            bioPhotoContainer.appendChild(photoOverlay);
+            if (bioPhoto) bioPhoto.src = photoSources[0]; // initialize
+        }
+
+        async function cycleFadeHeadline() {
+            if (!fadeTitle) return;
+
+            fadeIndex = (fadeIndex + 1) % fadeRoles.length;
+            const nextRole = fadeRoles[fadeIndex];
+            
+            // Phase 1: Blocks appear and cover the text
+            blocks.forEach(b => {
+                b.style.backgroundColor = nextRole.color;
+                b.classList.add('active');
+            });
+            photoBlocks.forEach(b => {
+                b.style.backgroundColor = nextRole.color;
+                b.classList.add('active');
+            });
+            
+            // Wait for blocks to fully cover (0.4s max delay + 0.25s transition)
+            await new Promise(r => setTimeout(r, 650));
+            
+            // Phase 2: Change text underneath
+            fadeTitle.textContent = nextRole.title;
+            if (heroWrapper) heroWrapper.style.setProperty('--neon-glow-color', nextRole.color);
+            if (aboutSection) aboutSection.style.setProperty('--neon-glow-color', nextRole.color);
+            
+            // Change Photo underneath
+            if (bioPhoto) {
+                photoIndex = (photoIndex + 1) % photoSources.length;
+                bioPhoto.src = photoSources[photoIndex];
+            }
+            
+            // Wait a tiny bit just to ensure DOM updates smoothly
+            await new Promise(r => setTimeout(r, 50));
+            
+            // Phase 3: Blocks disappear to reveal new text
+            blocks.forEach(b => {
+                // Re-roll delays so it looks different going out
+                b.style.transitionDelay = `${Math.random() * 0.4}s`;
+                b.classList.remove('active');
+            });
+            photoBlocks.forEach(b => {
+                b.style.transitionDelay = `${Math.random() * 0.4}s`;
+                b.classList.remove('active');
+            });
+        }
+
+        // Start loop
+        setInterval(cycleFadeHeadline, 4000);
 
 
 
@@ -789,97 +882,37 @@
 
     </script>
 
-    <!-- PIXEL DISSOLVE PAGE TRANSITION SCRIPT -->
+
+    <!-- HORIZONTAL SCROLL LOGIC FOR PORTFOLIO -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Create overlay
-            const overlay = document.createElement('div');
-            overlay.className = 'pixel-transition-overlay'; 
-            overlay.id = 'pixel-transition-overlay';
-            
-            // Add 225 blocks (15x15)
-            for(let i=0; i<225; i++) {
-                const block = document.createElement('div');
-                block.className = 'pixel-block';
-                overlay.appendChild(block);
-            }
-            document.body.appendChild(overlay);
+            const scrollSection = document.getElementById('portfolio');
+            const track = document.getElementById('portfolio-track');
 
-            // SCROLL INTERCEPTOR FOR PIXEL DISSOLVE
-            let isTransitioning = false;
-            let lastScrollY = window.scrollY;
-            const aboutSection = document.getElementById('about');
-            
-            window.addEventListener('scroll', () => {
-                if (isTransitioning || !aboutSection) return;
-                
-                const currentScrollY = window.scrollY;
-                const thresholdDown = 50; // Scroll down threshold
-                const thresholdUp = aboutSection.offsetTop - 100; // Scroll up threshold
-                
-                // Detect scrolling DOWN from Hero to About
-                if (currentScrollY > thresholdDown && currentScrollY < thresholdUp - 100 && currentScrollY > lastScrollY) {
-                    isTransitioning = true;
-                    document.body.style.overflow = 'hidden';
+            if (scrollSection && track) {
+                window.addEventListener('scroll', () => {
+                    const rect = scrollSection.getBoundingClientRect();
+                    // Jarak scroll yang tersedia di dalam section ini
+                    const maxScroll = scrollSection.offsetHeight - window.innerHeight;
                     
-                    overlay.querySelectorAll('.pixel-block').forEach(b => {
-                        b.style.transitionDelay = (Math.random() * 0.3) + 's';
-                    });
-                    overlay.classList.add('active');
+                    let scrollY = -rect.top; // Seberapa jauh kita sudah men-scroll ke bawah dari awal section
                     
-                    setTimeout(() => {
-                        window.scrollTo(0, aboutSection.offsetTop);
-                        overlay.classList.remove('active');
-                        setTimeout(() => {
-                            document.body.style.overflow = '';
-                            lastScrollY = window.scrollY;
-                            isTransitioning = false;
-                        }, 500);
-                    }, 650);
-                }
-                
-                // Detect scrolling UP from About to Hero
-                if (currentScrollY < thresholdUp && currentScrollY > thresholdDown + 100 && currentScrollY < lastScrollY) {
-                    isTransitioning = true;
-                    document.body.style.overflow = 'hidden';
+                    if (scrollY < 0) scrollY = 0;
+                    if (scrollY > maxScroll) scrollY = maxScroll;
                     
-                    overlay.querySelectorAll('.pixel-block').forEach(b => {
-                        b.style.transitionDelay = (Math.random() * 0.3) + 's';
-                    });
-                    overlay.classList.add('active');
+                    // Persentase scroll (0 sampai 1)
+                    const progress = scrollY / maxScroll;
                     
-                    setTimeout(() => {
-                        window.scrollTo(0, 0);
-                        overlay.classList.remove('active');
-                        setTimeout(() => {
-                            document.body.style.overflow = '';
-                            lastScrollY = window.scrollY;
-                            isTransitioning = false;
-                        }, 500);
-                    }, 650);
-                }
-                
-                if (!isTransitioning) {
-                    lastScrollY = currentScrollY;
-                }
-            });
-
-            // Intercept link clicks for html pages
-            document.querySelectorAll('a[href]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if(href && href.includes('.html') && !href.startsWith('http') && this.target !== '_blank' && !href.startsWith('#')) {
-                        e.preventDefault();
-                        overlay.querySelectorAll('.pixel-block').forEach(b => {
-                            b.style.transitionDelay = (Math.random() * 0.3) + 's';
-                        });
-                        overlay.classList.add('active');
-                        setTimeout(() => {
-                            window.location.href = href;
-                        }, 750);
-                    }
+                    // Lebar track total dikurangi lebar layar (viewport) = seberapa jauh bisa di-translate ke kiri
+                    const maxTranslate = track.scrollWidth - window.innerWidth;
+                    const translateX = -(progress * maxTranslate);
+                    
+                    track.style.transform = `translateX(${translateX}px)`;
                 });
-            });
+                
+                // Trigger once to set initial position
+                window.dispatchEvent(new Event('scroll'));
+            }
         });
     </script>
 </body>
